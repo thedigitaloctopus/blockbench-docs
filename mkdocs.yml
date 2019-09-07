@@ -1,0 +1,5 @@
+site_name: Blockbench
+theme: readthedocs
+nav:
+  - Home: index.md
+  - Plugin: plugin.md
