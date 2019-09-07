@@ -1,0 +1,2 @@
+# blockbench-docs
+Blockbench Documentation
