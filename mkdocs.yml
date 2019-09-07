@@ -3,3 +3,4 @@ theme: readthedocs
 nav:
   - Home: index.md
   - Plugin: plugin.md
+  - Blockbench: blockbench.md
