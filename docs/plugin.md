@@ -41,11 +41,11 @@ If you want to declare variables that can be used anywhere within the plugin, yo
 
 })();
 ```
-To test your plugin, you can load it from the plugin menu using the button in the title bar, or you can simply drag and drop it into Blockbench.
+To test your plugin, you can load it from the plugin menu using the button in the title bar, or you can simply drag and drop it into Blockbench. Use the Plugin menu or press Ctrl/Cmd + J to reload it.
 
 
 ## Submitting your plugin
 
-For testing
+For testing or internal use you can load the plugin from the file. If you think your plugin can be useful for a larger group of users, you can submit it to the [blockbench-plugins repository](https://www.github.com/JannisX11/blockbench-plugins).
 
-
+To submit a plugin, fork the repository and add your plugin to the /plugins folder. Then add your plugin to the plugins.json file using the same ID and metadata as in your plugin file. When you are done, create a pull request and wait for it to be merged. Use the same process to submit updates and changes to your plugin.
