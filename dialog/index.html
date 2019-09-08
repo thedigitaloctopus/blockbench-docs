@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Dialog - Blockbench</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Dialog";
+    var mkdocs_page_input_path = "dialog.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Blockbench</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plugin/">Plugin</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockbench/">Blockbench</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Dialog</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#dialog">Dialog</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#new-dialog-options">new Dialog( options )</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#example">Example</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../utility/">Utility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../formats/">Formats</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Blockbench</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Dialog</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="dialog">Dialog</h1>
+<h2 id="new-dialog-options">new Dialog( options )</h2>
+<p>Creates a custom dialog</p>
+<ul>
+<li><code>options</code> Object<ul>
+<li><code>title</code> Title of the dialog</li>
+<li><code>title</code> Title of the dialog</li>
+<li><code>id</code> ID of the dialog</li>
+<li><code>lines</code> Array of HTML object strings for each line of content in the dialog.</li>
+<li><code>form</code> Create a form dialog. This is an object of inputs and lines that the form consists of.<ul>
+<li>Form part (Object)<ul>
+<li><code>type</code> (<code>input/textarea/select/number/color/checkbox</code>) Type of the input</li>
+<li><code>label</code> Label of the input</li>
+<li><code>readonly</code> When true, makes the input read-only</li>
+<li><code>value</code> Default value</li>
+<li><code>placeholder</code> Text to show when the input is empty</li>
+<li><code>text</code> Text when using the text type. Supports markdown-style links.</li>
+<li><code>colorpicker</code> When using the type: <code>color</code>, the colorpicker action to use. (optional)</li>
+<li><code>min</code>/<code>max</code>/<code>step</code> Mimimum, Maximum and Step attributes for the number input</li>
+<li><code>nocolon</code> Whether to skip the automatic colon added to the label</li>
+<li><code>height</code> Height for textarea inputs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>confirmEnabled</code> If false, the confirm button of the dialog is disabled</li>
+<li><code>cancelEnabled</code> If false, the cancel button of the dialog is disabled</li>
+<li><code>onConfirm</code> Function to execute when the user confirms the dialog</li>
+<li><code>onCancel</code> Function to execute when the user cancels the dialog</li>
+</ul>
+</li>
+</ul>
+<h3 id="dialogshow">Dialog.show()</h3>
+<p>Shows the dialog.</p>
+<h3 id="dialoghide">Dialog.hide()</h3>
+<p>Closes the dialog.</p>
+<h3 id="dialogconfirm">Dialog.confirm()</h3>
+<p>Triggers the confirm event of the dialog.</p>
+<h3 id="dialogcancel">Dialog.cancel()</h3>
+<p>Triggers the cancel event of the dialog.</p>
+<h1 id="example">Example</h1>
+<pre><code class="javascript">new Dialog({
+    id: 'generate_tree',
+    title: 'Tree Generator',
+    form: {
+        branches: {label: 'Branches', type: 'number', value: 10, step: 1, min: 1, max: 16},
+        conifer: {label: 'Conifer', type: 'checkbox'},
+    },
+    onConfirm: function(formData) {
+        TreeGenerator.generateTree(formData.branches, formData.conifer)
+        this.hide()
+    }
+}).show()
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../undo/" class="btn btn-neutral float-right" title="Undo">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../blockbench/" class="btn btn-neutral" title="Blockbench"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../blockbench/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../undo/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

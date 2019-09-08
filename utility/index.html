@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Utility - Blockbench</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Utility";
+    var mkdocs_page_input_path = "utility.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Blockbench</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plugin/">Plugin</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockbench/">Blockbench</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../dialog/">Dialog</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Utility</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#utility">Utility</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#general-things">General Things</a></li>
+        
+            <li><a class="toctree-l3" href="#libraries">Libraries</a></li>
+        
+            <li><a class="toctree-l3" href="#math">Math</a></li>
+        
+            <li><a class="toctree-l3" href="#dates">Dates</a></li>
+        
+            <li><a class="toctree-l3" href="#array">Array</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../formats/">Formats</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Blockbench</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Utility</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="utility">Utility</h1>
+<p>Blockbench comes with a bunch of custom utility functions to make the life of developers easier.</p>
+<h2 id="general-things">General Things</h2>
+<h3 id="condition-condition-context">Condition( condition, context )</h3>
+<p>Returns true if the condition checks out. Conditions can be
+* Simple booleans
+* Functions returning a value
+* If the condition is undefined, it will return true</p>
+<h3 id="oneliner-data">oneLiner( data )</h3>
+<p>Used as a wrapper for an object to tell the JSON exporter to print the entire Object in one line.</p>
+<h3 id="cl-args">cl( args )</h3>
+<p>A simple shortcut for <code>console.log</code></p>
+<h3 id="guid">guid()</h3>
+<p>Generates a uuid.</p>
+<h3 id="isuuid-uuid">isUUID( uuid )</h3>
+<p>returns true if <code>uuid</code> is in fact a UUID.</p>
+<h3 id="bbuid-length">bbuid( length )</h3>
+<p>Returns a short random unique identifier using the given <code>length</code> and the characters [a-zA-Z0-9].</p>
+<h3 id="autostringify-object">autoStringify( object )</h3>
+<p>Compiles the <code>object</code> to a JSON string using the Blockbench custom JSON compiler under consideration of the minified output setting.</p>
+<h3 id="pathtoname-path-extension">pathToName( path[, extension] )</h3>
+<p>Turns the file path <code>path</code> into the corresponding file name, including file extension of extension is set to true.</p>
+<h3 id="pathtoextension-path">pathToExtension( path )</h3>
+<p>Returns the extension of a file path or name.</p>
+<h2 id="libraries">Libraries</h2>
+<h3 id="dom-manipulation">DOM Manipulation</h3>
+<p>Blockbench uses <a href="https://api.jquery.com">jQuery</a> as a simple way to interact with the DOM.</p>
+<h3 id="colors">Colors</h3>
+<p>Blockbench uses <a href="https://bgrins.github.io/spectrum/">Spectrum</a> as a Color picker and <a href="https://github.com/bgrins/TinyColor">tinycolor</a> as a color handling and conversion library.
+Images can be manupulated using <a href="https://github.com/oliver-moran/jimp">Jimp</a> but for simpler edits I recommend to use the HTML5 canvas since it is a lot faster.</p>
+<h3 id="3d-editor">3D Editor</h3>
+<p>THREE.JS is used to display and handle the 3D preview. Read the <a href="https://threejs.org/docs/">three.js docs</a> for more info.</p>
+<h2 id="math">Math</h2>
+<h3 id="mathradtodeg-rad">Math.radToDeg( rad )</h3>
+<p>Converts radiants into degrees</p>
+<h3 id="mathdegtorad-deg">Math.degToRad( deg )</h3>
+<p>Converts degrees into radiants</p>
+<h3 id="mathroundto-number-digits">Math.roundTo( number, digits )</h3>
+<p>Rounds the number <code>number</code> to <code>digits</code> decimal places.</p>
+<h3 id="mathlerp-a-b-m">Math.lerp( a, b, m )</h3>
+<p>Lerps between the values <code>a</code> and <code>b</code> using <code>lerp</code> (between 0 and 1)</p>
+<h3 id="mathisbetween-n-a-b">Math.isBetween( n, a, b )</h3>
+<p>Returns true if <code>n</code> is in between <code>a</code> and <code>b</code>.</p>
+<h3 id="mathtrimdeg-deg">Math.trimDeg( deg )</h3>
+<p>Trims the given degree number to a normalized value between -180 and 180.</p>
+<h3 id="mathispoweroftwo-x">Math.isPowerOfTwo( x )</h3>
+<p>Returns true if <code>x</code> is a power of two.</p>
+<h3 id="mathrandomab-a-b">Math.randomab( a, b )</h3>
+<p>Returns a random number between <code>a</code> and <code>b</code></p>
+<h3 id="mathclamp-n-a-b">Math.clamp( n, a, b )</h3>
+<p>Clamps the number <code>n</code> to a number in between or equal to <code>a</code> or <code>b</code>.</p>
+<h3 id="matharemultiples-a-b">Math.areMultiples( a, b )</h3>
+<p>Returns true if <code>a</code> is a multiple of <code>b</code> or vice versa.</p>
+<h3 id="trimfloatnumber-n">trimFloatNumber( n )</h3>
+<p>Trims the given float to a readable by rounding it to 4 decimal places maximum, to avoid values such as 1.59999999999</p>
+<h3 id="getaxisnumber-letter">getAxisNumber( letter )</h3>
+<p>Converts an axis letter (<code>x, y, z</code>) into an axis number (<code>0, 1, 2</code>)</p>
+<h3 id="getaxisletter-number">getAxisLetter( number )</h3>
+<p>Converts an axis number (<code>0, 1, 2</code>) into an axis letter (<code>x, y, z</code>)</p>
+<h2 id="dates">Dates</h2>
+<h3 id="dategetdatearray">Date.getDateArray()</h3>
+<p>Returns an array of the date of <code>Date</code> in the format <code>[d, m, yyyy]</code></p>
+<h3 id="dategetdatestring">Date.getDateString()</h3>
+<p>Returns a string of the data <code>Date</code> in the format <code>"dd.mm.yyyy"</code></p>
+<h3 id="datedayofyear">Date.dayOfYear()</h3>
+<p>Returns the day of the year</p>
+<h2 id="array">Array</h2>
+<h3 id="arraysafepush-item">Array.safePush( item )</h3>
+<p>Pushes <code>item</code> to <code>Array</code> only if it is not in the array yet.</p>
+<h3 id="arrayequals-array">Array.equals( array )</h3>
+<p>Checks if <code>Array</code> and <code>array</code> have the same content.</p>
+<h3 id="arrayremove-item">Array.remove( item )</h3>
+<p>Removes <code>item</code> from <code>Array</code></p>
+<h3 id="arrayempty">Array.empty()</h3>
+<p>Empties the array</p>
+<h3 id="arraypurge">Array.purge()</h3>
+<p>Empties an array while also updating it for VueJS</p>
+<h3 id="arrayfindinarray-key-value">Array.findInArray( key, value )</h3>
+<p>Find an object in the array by looking for a <code>key: value</code> match</p>
+<h3 id="arraylast">Array.last()</h3>
+<p>Returns the last item of the array</p>
+<h3 id="arraypositiveitems">Array.positiveItems()</h3>
+<p>Returns the number of truthy items in the array.</p>
+<h3 id="arrayallequal-value">Array.allEqual( value )</h3>
+<p>Returns true if all items in the array equal <code>value</code>.</p>
+<h3 id="arrayrandom">Array.random()</h3>
+<p>Returns a random item of the array.</p>
+<h3 id="arrayforeachreverse-callback">Array.forEachReverse( callback )</h3>
+<p>Runs the function <code>callback</code> for each item in the list, starting from the end.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../formats/" class="btn btn-neutral float-right" title="Formats">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../undo/" class="btn btn-neutral" title="Undo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../undo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../formats/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

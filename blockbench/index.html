@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Blockbench - Blockbench</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Blockbench";
+    var mkdocs_page_input_path = "blockbench.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Blockbench</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plugin/">Plugin</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Blockbench</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#blockbench">Blockbench</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#information">Information</a></li>
+        
+            <li><a class="toctree-l3" href="#flags">Flags</a></li>
+        
+            <li><a class="toctree-l3" href="#import">Import</a></li>
+        
+            <li><a class="toctree-l3" href="#export">Export</a></li>
+        
+            <li><a class="toctree-l3" href="#events">Events</a></li>
+        
+            <li><a class="toctree-l3" href="#drag-and-drop-files">Drag and Drop Files</a></li>
+        
+            <li><a class="toctree-l3" href="#icons">Icons</a></li>
+        
+            <li><a class="toctree-l3" href="#interface">Interface</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../dialog/">Dialog</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../utility/">Utility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../formats/">Formats</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Blockbench</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Blockbench</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="blockbench">Blockbench</h1>
+<p>The Blockbench object provides useful variables and methods to interact with general functionality of Blockbench.</p>
+<h2 id="information">Information</h2>
+<ul>
+<li><code>Blockbench.isWeb</code> true if Blockbench is used in a web browser</li>
+<li><code>Blockbench.isMobile</code> true if Blockbench is used in the mobile version</li>
+<li><code>Blockbench.version</code> The installed version of Blockbench</li>
+<li><code>Blockbench.openTime</code> Date object of the time Blockbench was opened</li>
+</ul>
+<h2 id="flags">Flags</h2>
+<p>Flags can be used to save a binary state within Blockbench.</p>
+<h3 id="blockbenchaddflag-flag">Blockbench.addFlag( flag )</h3>
+<p>Sets a flag.</p>
+<ul>
+<li><code>flag</code>: String</li>
+</ul>
+<h3 id="blockbenchremoveflag-flag">Blockbench.removeFlag( flag )</h3>
+<p>Sets a flag.</p>
+<ul>
+<li><code>flag</code>: String</li>
+</ul>
+<h3 id="blockbenchhasflag-flag">Blockbench.hasFlag( flag )</h3>
+<p>Returns true if Blockbench has the flag <code>flag</code></p>
+<ul>
+<li><code>flag</code>: String</li>
+</ul>
+<h2 id="import">Import</h2>
+<h3 id="blockbenchimport-options-callback">Blockbench.import( options, callback )</h3>
+<p>Opens the file import dialog and reads the file.</p>
+<ul>
+<li><code>options</code>: Object<ul>
+<li><code>startpath</code> Path where to start the file dialog. Only works on desktop</li>
+<li><code>type</code> Name of the file type. If unset, it will use the first extension</li>
+<li><code>extensions</code> Array of extensions that can be imported</li>
+<li><code>multiple</code> If true, multiple files can be selected and loaded</li>
+<li><code>readtype</code> How to read the imported files. Can be <code>image</code>, <code>buffer</code> or <code>text</code> (default).</li>
+<li><code>title</code> Title to use for the import dialog. Only works on desktop.</li>
+<li><code>errorbox</code> Whether to display an error dialog if Blockbench can't load the file</li>
+</ul>
+</li>
+<li><code>callback</code>: Function. Called after all files have been read.<ul>
+<li><code>files</code>: Array of imported and read files<ul>
+<li><code>path</code> Path to the file. Will only return the name in the web app</li>
+<li><code>name</code> File name</li>
+<li><code>content</code> Content of the file. String for plain text files, base64 string for images (only .tga images or images on the web app)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="blockbenchread-paths-options-callback">Blockbench.read( paths, options, callback )</h3>
+<p>Reads one or multiple files at a fixed path. Only available on desktop app.</p>
+<ul>
+<li><code>paths</code> Array of file paths.</li>
+<li><code>options</code> Import options.<ul>
+<li><code>readtype</code> How to read the imported files. Can be <code>image</code>, <code>buffer</code> or <code>text</code> (default).</li>
+<li><code>errorbox</code> Whether to display an error dialog if Blockbench can't load the file</li>
+</ul>
+</li>
+<li><code>callback</code>: Function. Called after all files have been read.<ul>
+<li><code>files</code>: Array of imported and read files<ul>
+<li><code>path</code> Path to the file. Will only return the name in the web app</li>
+<li><code>name</code> File name</li>
+<li><code>content</code> Content of the file. String for plain text files, base64 string for images (only .tga images or images on the web app)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="export">Export</h2>
+<h3 id="blockbenchexport-options-callback">Blockbench.export( options, callback )</h3>
+<p>Opens a file save dialog to ask where to save the file. In most browsers, the file will just get downloaded with the default name.</p>
+<ul>
+<li><code>options</code>: Object<ul>
+<li><code>startpath</code> Path where to start the file dialog. Only works on desktop</li>
+<li><code>type</code> Name of the file type</li>
+<li><code>extensions</code> Array of possible extensions</li>
+<li><code>name</code> Suggested file name. Gets overwritten by startpath.</li>
+<li><code>content</code> Content of the file. Can be a string for plain text files or a base64 string or path for images.</li>
+<li><code>savetype</code> How to save the file. Can be <code>text</code> (default), <code>image</code> or <code>zip</code>.</li>
+<li><code>custom_writer</code> In the desktop app, you can use this to create a custom function to save the file. This can be used to merge with the old file for example. Has two arguments: <code>content</code> and <code>path</code>.</li>
+</ul>
+</li>
+<li><code>callback</code>: Function. Called after the file has been exported.<ul>
+<li><code>path</code> The path the file has been exported to. Only on desktop app.</li>
+</ul>
+</li>
+</ul>
+<h3 id="blockbenchwritefile-path-options-callback">Blockbench.writeFile( path, options, callback )</h3>
+<p>Writes a file at the specified path.</p>
+<ul>
+<li><code>path</code>: File path</li>
+<li><code>options</code>: Object<ul>
+<li><code>content</code> Content of the file. Can be a string for plain text files or a base64 string or path for images.</li>
+<li><code>savetype</code> How to save the file. Can be <code>text</code> (default), <code>image</code> or <code>zip</code>.</li>
+<li><code>custom_writer</code> In the desktop app, you can use this to create a custom function to save the file. This can be used to merge with the old file for example. Has two arguments: <code>content</code> and <code>path</code>.</li>
+</ul>
+</li>
+<li><code>callback</code>: Function. Called after the file has been exported.<ul>
+<li><code>path</code> The path the file has been exported to.</li>
+</ul>
+</li>
+</ul>
+<h2 id="events">Events</h2>
+<p>Listen to and dispatch Blockbench-specific events</p>
+<h3 id="blockbenchon-event_id-callback">Blockbench.on( event_id, callback )</h3>
+<p>Runs a function when Blockbench emits a specific event</p>
+<ul>
+<li><code>event_id</code> Event to listen for</li>
+<li><code>callback</code> Function to execute. Has one argument <code>data</code>.</li>
+</ul>
+<h3 id="blockbenchdispatchevent-event_id-data">Blockbench.dispatchEvent( event_id, data )</h3>
+<p>Triggers an event.</p>
+<ul>
+<li><code>event_id</code> Name of the event,</li>
+<li><code>data</code> Data to submit to the listeners</li>
+</ul>
+<h3 id="blockbenchremoveeventlistener-event_id-callback">Blockbench.removeEventListener( event_id, callback)</h3>
+<p>Removes an event listener using the <code>event_id</code> and <code>callback</code>. Should be used in <code>onunload</code> in a plugin to clear event listeners.</p>
+<h3 id="list-of-blockbench-events">List of Blockbench events</h3>
+<table>
+<thead>
+<tr>
+<th>Event ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>remove_animation</td>
+<td>Emitted after a user removes an animation</td>
+</tr>
+<tr>
+<td>display_animation_frame</td>
+<td>Emitted when Blockbench renders a frame of an animation</td>
+</tr>
+<tr>
+<td>before_closing</td>
+<td></td>
+</tr>
+<tr>
+<td>create_session</td>
+<td></td>
+</tr>
+<tr>
+<td>join_session</td>
+<td></td>
+</tr>
+<tr>
+<td>quit_session</td>
+<td></td>
+</tr>
+<tr>
+<td>send_session_data</td>
+<td></td>
+</tr>
+<tr>
+<td>receive_session_data</td>
+<td></td>
+</tr>
+<tr>
+<td>user_joins_session</td>
+<td></td>
+</tr>
+<tr>
+<td>user_leaves_session</td>
+<td></td>
+</tr>
+<tr>
+<td>process_chat_message</td>
+<td></td>
+</tr>
+<tr>
+<td>update_settings</td>
+<td></td>
+</tr>
+<tr>
+<td>save_project</td>
+<td></td>
+</tr>
+<tr>
+<td>load_project</td>
+<td></td>
+</tr>
+<tr>
+<td>new_project</td>
+<td></td>
+</tr>
+<tr>
+<td>close_project</td>
+<td></td>
+</tr>
+<tr>
+<td>add_cube</td>
+<td></td>
+</tr>
+<tr>
+<td>add_group</td>
+<td></td>
+</tr>
+<tr>
+<td>update_selection</td>
+<td></td>
+</tr>
+<tr>
+<td>select_all</td>
+<td></td>
+</tr>
+<tr>
+<td>added_to_selection</td>
+<td></td>
+</tr>
+<tr>
+<td>invert_selection</td>
+<td></td>
+</tr>
+<tr>
+<td>canvas_select</td>
+<td></td>
+</tr>
+<tr>
+<td>change_texture_path</td>
+<td></td>
+</tr>
+<tr>
+<td>add_texture</td>
+<td></td>
+</tr>
+<tr>
+<td>finish_edit</td>
+<td></td>
+</tr>
+<tr>
+<td>finished_edit</td>
+<td></td>
+</tr>
+<tr>
+<td>undo</td>
+<td></td>
+</tr>
+<tr>
+<td>redo</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="drag-and-drop-files">Drag and Drop Files</h2>
+<h3 id="blockbenchadddraghandler-id-options-callback">Blockbench.addDragHandler( id, options, callback )</h3>
+<p>Handles file drop events for the specified file types</p>
+<ul>
+<li><code>id</code> ID of the handler</li>
+<li><code>options</code>: Objecct <ul>
+<li><code>extensions</code> Array of extensions that will trigger this handler</li>
+<li><code>element</code> </li>
+<li><code>addClass</code> </li>
+<li><code>propagate</code> </li>
+<li><code>readtype</code> How to read the dropped files. See <a href="#blockbenchread-paths-options-callback">Blockbench.read</a></li>
+<li><code>errorbox</code> Whether to show an error message if Blockbench fails to load the file.</li>
+</ul>
+</li>
+<li><code>callback</code>: Function. Called after all files have been read.<ul>
+<li><code>files</code>: Array of imported and read files<ul>
+<li><code>path</code> Path to the file. Will only return the name in the web app</li>
+<li><code>name</code> File name</li>
+<li><code>content</code> Content of the file. String for plain text files, base64 string for images (only .tga images or images on the web app)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="blockbenchremovedraghandler-id">Blockbench.removeDragHandler( id )</h3>
+<p>Removes and disables a drag handler using its ID.</p>
+<h2 id="icons">Icons</h2>
+<p>Icons are used throughout Blockbench in actions, menus and plugins. Google Material icons, Font Awesome Regular, Solid and Brands as well as a set of custom Blockbench icons are available.</p>
+<h3 id="blockbenchgeticonnode-string-color">Blockbench.getIconNode( string[, color])</h3>
+<p>Returns a HTML node for the specified icon.</p>
+<ul>
+<li><code>string</code> Specifies the pack and name of the icon.<ul>
+<li>Strings starting with fa return Font Awesome icons. Example: <code>'fa-bone'</code></li>
+<li>Prepend <code>far.</code> or <code>fas.</code> to choose between regular and solid icons. Example: <code>'fas.fa-circle'</code></li>
+<li>Regular strings will return a Google Materials Icon</li>
+<li>Strings starting with <code>icon-</code> will return custom Blockbench icons (see list below)</li>
+<li>Base64 image strings will return an image/texture in icon format</li>
+<li>Passing a function will run the function and use the return value to determine the icon</li>
+<li>If undefined, it will return a question mark icon</li>
+</ul>
+</li>
+<li><code>color</code> Optional. Colors the icon in a specific color. Can be <code>x</code>, <code>y</code> or <code>z</code> for a generic axis color or a CSS color string for a custom color.</li>
+</ul>
+<h3 id="available-icons">Available Icons</h3>
+<ul>
+<li><a href="https://material.io/resources/icons/?style=baseline">Google Material Icons</a></li>
+<li><a href="https://fontawesome.com/icons?d=gallery&amp;m=free">Font Awesome Free Icons</a></li>
+<li>Custom Blockbench icons:<ul>
+<li><code>icon-mirror_x</code></li>
+<li><code>icon-mirror_y</code></li>
+<li><code>icon-mirror_z</code></li>
+<li><code>icon-saved</code></li>
+<li><code>icon-player</code></li>
+<li><code>icon-player_head</code></li>
+<li><code>icon-zombie</code></li>
+<li><code>icon-baby_zombie</code></li>
+<li><code>icon-armor_stand</code></li>
+<li><code>icon-armor_stand_small</code></li>
+<li><code>icon-ground</code></li>
+<li><code>icon-hud</code></li>
+<li><code>icon-inventory_full</code></li>
+<li><code>icon-inventory_nine</code></li>
+<li><code>icon-inventory_single</code></li>
+<li><code>icon-bow</code></li>
+<li><code>icon-crossbow</code></li>
+<li><code>icon-x11</code></li>
+<li><code>icon-blockbench</code></li>
+<li><code>icon-blockbench_inverted</code></li>
+<li><code>icon-vertexsnap</code></li>
+<li><code>icon-create_bitmap</code></li>
+<li><code>icon-objects</code></li>
+<li><code>icon-bb_interface</code></li>
+<li><code>icon-sketchfab</code></li>
+<li><code>icon-optifine_file</code></li>
+<li><code>icon-format_bedrock</code></li>
+<li><code>icon-format_block</code></li>
+<li><code>icon-format_free</code></li>
+<li><code>icon-format_java</code></li>
+<li><code>icon-format_optifine</code></li>
+<li><code>icon-format_bedrock_legacy</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<h3 id="blockbenchshowquickmessage-message-time">Blockbench.showQuickMessage( message[, time] )</h3>
+<p>Displays a quick message in the middle of the Blockbench interface</p>
+<ul>
+<li><code>message</code> Message to display. Can be a translation string</li>
+<li><code>time</code> How long to display the message in miliseconds. Defaults to 1000 miliseconds.</li>
+</ul>
+<h3 id="blockbenchshowstatusmessage-message-time">Blockbench.showStatusMessage( message[, time] )</h3>
+<p>Displays a message in the status bar of Blockbench.</p>
+<ul>
+<li><code>message</code> Message to display. Can be a translation string</li>
+<li><code>time</code> How long to display the message in miliseconds. Defaults to 1000 miliseconds.</li>
+</ul>
+<h3 id="blockbenchsetstatusbartext-text">Blockbench.setStatusBarText( text )</h3>
+<p>Sets a text to the status bar</p>
+<ul>
+<li><code>text</code> Text to display. If undefined, it will return to the old value.</li>
+</ul>
+<h3 id="blockbenchsetprogress-progress">Blockbench.setProgress( progress )</h3>
+<p>Sets the progress bar below the status bar and in the taskbar/dock.</p>
+<ul>
+<li><code>progress</code> Progress (0 is empty, 1 is full)</li>
+</ul>
+<h3 id="blockbenchshowmessagebox-options-cb">Blockbench.showMessageBox( options, cb )</h3>
+<p>Shows a simple message box with a title, message, an icon and buttons </p>
+<ul>
+<li><code>options</code> Object<ul>
+<li><code>buttons</code> Array or strings used to generate the buttons</li>
+<li><code>confirm</code> Index of the button used to confirm the dialog</li>
+<li><code>cancel</code> Index of the button used to cancel the dialog</li>
+<li><code>translateKey</code> Translation key used to auto-fill the title and message from translations</li>
+<li><code>title</code> Dialog Title</li>
+<li><code>message</code> Dialog content</li>
+<li><code>icon</code> Icon string, see <a href="#icons">#Icons</a></li>
+<li><code>width</code> Dialog width in pixels</li>
+</ul>
+</li>
+<li><code>callback</code> Called when the user exits the dialog using the buttons.<ul>
+<li><code>result</code> Argument, the index of the clicked button within the buttons array.</li>
+</ul>
+</li>
+</ul>
+<h3 id="blockbenchtextprompt-title-value-callback">Blockbench.textPrompt( title, value, callback )</h3>
+<p>Prompts the user to enter or edit a text.</p>
+<ul>
+<li><code>title</code> Dialog title</li>
+<li><code>value</code> Before value of the text</li>
+<li><code>callback</code> Runs when the user confirms the prompt<ul>
+<li><code>text</code> Only parameter, the text entered by the user</li>
+</ul>
+</li>
+</ul>
+<h3 id="blockbenchopenlink-link">Blockbench.openLink( link )</h3>
+<p>Opens a link in an external browser window or new tab.</p>
+<h3 id="blockbenchnotification-title-text-icon">Blockbench.notification( title, text[, icon])</h3>
+<p>Displays a push notification. In browsers, the user has to accept notifications first.</p>
+<ul>
+<li><code>title</code> Notification title</li>
+<li><code>text</code> Notification content</li>
+<li><code>icon</code> Notification icon, defaults to the Blockbench icon</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dialog/" class="btn btn-neutral float-right" title="Dialog">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../plugin/" class="btn btn-neutral" title="Plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../plugin/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../dialog/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

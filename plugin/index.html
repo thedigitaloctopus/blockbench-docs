@@ -60,8 +60,41 @@
             
     <li class="toctree-l2"><a href="#plugin">Plugin</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#creating-a-plugin">Creating a plugin</a></li>
+        
+            <li><a class="toctree-l3" href="#submitting-your-plugin">Submitting your plugin</a></li>
+        
+        </ul>
+    
 
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockbench/">Blockbench</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../dialog/">Dialog</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../utility/">Utility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../formats/">Formats</a>
 	    </li>
           
         </ul>
@@ -97,12 +130,59 @@
             <div class="section">
               
                 <h1 id="plugin">Plugin</h1>
+<h2 id="creating-a-plugin">Creating a plugin</h2>
+<p>Plugins consist of a Javascript file. To create a plugin, create a new Javascript file named <code>[plugin-id].js</code>. Inside this file, use the method Plugin.register to initialize the plugin, as seen in the example. Note that the plugin ID should be the same as the file name minus extension.</p>
+<pre><code class="javascript">Plugin.register('plugin_id', {
+    title: 'Plugin Name',
+    author: 'Your Name',
+    icon: 'icon',
+    description: 'Your Description',
+    version: '1.0.0',
+    variant: 'both',
+    onload() {
+    }
+});
+</code></pre>
+
+<ul>
+<li><code>title</code> Plugin title as shown in the store in Blockbench</li>
+<li><code>author</code> Author name or names </li>
+<li><code>description</code> Plugin description for the store in Blockbench</li>
+<li><code>about</code> Longer Plugin description or instructions, can be unfolded in the store</li>
+<li><code>icon</code> Blockbench icon string, see <a href="../blockbench/#icon">Blockbench#icon</a></li>
+<li><code>version</code> Version number for your plugin using <a href="https://semver.org">semver</a> </li>
+<li><code>variant</code> Variant of Blockbench which supports your plugin. Can be <code>desktop</code>, <code>web</code> or <code>both</code></li>
+<li><code>onload</code> function. Runs whenever the plugin is loaded or after a reload</li>
+<li><code>onunload</code> function. Runs whenever the plugin unloads</li>
+<li><code>oninstall</code> function. Runs when the player installs the plugin</li>
+<li><code>onuninstall</code> function. Runs when the player uninstalls the plugin</li>
+</ul>
+<p>If you want to declare variables that can be used anywhere within the plugin, you can wrap your whole within a self-invoking function and create variables like this:</p>
+<pre><code class="javascript">(function() {
+    var plugin_variable_1;
+
+    Plugin.register('plugin_id', {
+        onload() {
+            plugin_variable_1 = 'foo';
+        },
+        ...
+    });
+
+})();
+</code></pre>
+
+<p>To test your plugin, you can load it from the plugin menu using the button in the title bar, or you can simply drag and drop it into Blockbench. Use the Plugin menu or press Ctrl/Cmd + J to reload it.</p>
+<h2 id="submitting-your-plugin">Submitting your plugin</h2>
+<p>For testing or internal use you can load the plugin from the file. If you think your plugin can be useful for a larger group of users, you can submit it to the <a href="https://www.github.com/JannisX11/blockbench-plugins">blockbench-plugins repository</a>.</p>
+<p>To submit a plugin, fork the repository and add your plugin to the /plugins folder. Then add your plugin to the plugins.json file using the same ID and metadata as in your plugin file. When you are done, create a pull request and wait for it to be merged. Use the same process to submit updates and changes to your plugin.</p>
               
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../blockbench/" class="btn btn-neutral float-right" title="Blockbench">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -133,6 +213,8 @@
       
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../blockbench/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

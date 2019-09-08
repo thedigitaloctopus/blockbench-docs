@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Formats - Blockbench</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Formats";
+    var mkdocs_page_input_path = "formats.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Blockbench</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plugin/">Plugin</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockbench/">Blockbench</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../dialog/">Dialog</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../utility/">Utility</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Formats</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#formats">Formats</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#modelformat">ModelFormat</a></li>
+        
+            <li><a class="toctree-l3" href="#codec">Codec</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Blockbench</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Formats</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="formats">Formats</h1>
+<h2 id="modelformat">ModelFormat</h2>
+<p>A model format can describe how a specific type of model can be made: Which features are available, which modes can be accessed and to which file formats can the model be exported.</p>
+<h3 id="new-modelformat-data">new ModelFormat( data )</h3>
+<ul>
+<li><code>data</code> Object<ul>
+<li><code>id</code> Format ID</li>
+<li><code>name</code> Format name</li>
+<li><code>description</code> Format description</li>
+<li><code>show_on_start_screen</code> Whether to list the format as an option on the start screen</li>
+<li><code>box_uv</code> Whether to enable box UV in the format</li>
+<li><code>optional_box_uv</code> Allows the user to enable or disable box UV within the format</li>
+<li><code>single_texture</code> Only allow one single texture at a time</li>
+<li><code>bone_rig</code> Whether to use groups as a bone rig</li>
+<li><code>rotate_cubes</code> Allow the user to rotate cubes</li>
+<li><code>integer_size</code> Limit cube sizes to full integers</li>
+<li><code>locators</code> Enable Locators</li>
+<li><code>canvas_limit</code> Enable the 3x3x3 model size limmit</li>
+<li><code>rotation_limit</code> Enable the rotation limit to 22.5 degrees and one axis</li>
+<li><code>display_mode</code> Enable the display mode</li>
+<li><code>animation_mode</code> Enable animations</li>
+<li><code>codec</code> Which <a href="#codec">Codec</a> to use as the default codec for the format</li>
+<li><code>onActivation</code> Function to run on activation of the format</li>
+<li><code>onDeactivation</code> Function to run on deactivation of the format</li>
+</ul>
+</li>
+</ul>
+<h3 id="formatselect">Format.select()</h3>
+<p>Selects the format</p>
+<h3 id="formatnew">Format.new()</h3>
+<p>Creates a new project using this format.</p>
+<h3 id="formatconvertto">Format.convertTo()</h3>
+<p>Convert the model to this format</p>
+<h2 id="codec">Codec</h2>
+<p>Codecs are used to define specific file formats. Codecs can have an importer and an exporter as well as a few other functions that can be overwritten to achieve custom import and export behavior.</p>
+<h3 id="new-codecid-data">new Codec(id, data)</h3>
+<ul>
+<li><code>id</code> ID of the Codec</li>
+<li><code>data</code> Object<ul>
+<li><code>name</code> Name of the Codec</li>
+<li><code>extension</code> Default extension for the codec</li>
+<li><code>remember</code> Boolean. Whether to remember the model in the recent files list and as the opened model file.</li>
+<li><code>export_action</code> Default action used to export for this format.</li>
+<li><code>compile()</code> Should return the compiled model</li>
+<li><code>parse( model, path )</code> Parse and add the provided model to Blockbench</li>
+<li><code>export()</code> Overwrite the default export function</li>
+<li><code>load( model, file, add )</code> Overwrite the default load function</li>
+<li><code>fileName()</code> Returns the suggested file name for exported files</li>
+<li><code>filePath</code> Returns the suggested start path for the export dialog</li>
+<li><code>afterDownload</code> Called after a model has successfully been downloaded. Displays the success message</li>
+<li><code>afterSave(path)</code> Overwrite the default afterSave function</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../utility/" class="btn btn-neutral" title="Utility"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../utility/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
