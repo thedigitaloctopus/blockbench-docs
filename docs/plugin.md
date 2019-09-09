@@ -19,7 +19,7 @@ Plugin.register('plugin_id', {
 * `author` Author name or names 
 * `description` Plugin description for the store in Blockbench
 * `about` Longer Plugin description or instructions, can be unfolded in the store
-* `icon` Blockbench icon string, see [Blockbench#icon](blockbench.md#icon)
+* `icon` Blockbench icon string, see [Blockbench#icons](blockbench.md#icons)
 * `version` Version number for your plugin using [semver](https://semver.org) 
 * `variant` Variant of Blockbench which supports your plugin. Can be `desktop`, `web` or `both`
 * `onload` function. Runs whenever the plugin is loaded or after a reload

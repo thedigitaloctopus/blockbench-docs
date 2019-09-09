@@ -4,7 +4,8 @@ nav:
   - Home: index.md
   - Plugin: plugin.md
   - Blockbench: blockbench.md
-  - Dialog: dialog.md
+  - Interface: ui.md
   - Undo: undo.md
   - Utility: utility.md
   - Formats: formats.md
+  - Textures: textures.md

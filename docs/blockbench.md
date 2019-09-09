@@ -11,34 +11,21 @@ The Blockbench object provides useful variables and methods to interact with gen
 
 ## Flags
 
-Flags can be used to save a binary state within Blockbench.
+Flags can be used to save a binary state within an instance of Blockbench.
 
-### Blockbench.addFlag( flag )
+#### Blockbench.addFlag( flag: String )
 
-Sets a flag.
+#### Blockbench.removeFlag( flag: String )
 
-* `flag`: String
-
-### Blockbench.removeFlag( flag )
-
-Sets a flag.
-
-* `flag`: String
-
-### Blockbench.hasFlag( flag )
-
-Returns true if Blockbench has the flag `flag`
-
-* `flag`: String
-
+#### Blockbench.hasFlag( flag: String )
 
 ## Import
 
-### Blockbench.import( options, callback )
+#### Blockbench.import( options: Object, callback: function )
 
 Opens the file import dialog and reads the file.
 
-* `options`: Object
+* `options`
 	* `startpath` Path where to start the file dialog. Only works on desktop
 	* `type` Name of the file type. If unset, it will use the first extension
 	* `extensions` Array of extensions that can be imported
@@ -46,29 +33,29 @@ Opens the file import dialog and reads the file.
 	* `readtype` How to read the imported files. Can be `image`, `buffer` or `text` (default).
 	* `title` Title to use for the import dialog. Only works on desktop.
 	* `errorbox` Whether to display an error dialog if Blockbench can't load the file
-* `callback`: Function. Called after all files have been read.
-	* `files`: Array of imported and read files
+* `callback` Called after all files have been read.
+	* `files: Array` Imported and read files
 		* `path` Path to the file. Will only return the name in the web app
 		* `name` File name
 		* `content` Content of the file. String for plain text files, base64 string for images (only .tga images or images on the web app)
 
-### Blockbench.read( paths, options, callback )
+#### Blockbench.read( paths, options, callback )
 
 Reads one or multiple files at a fixed path. Only available on desktop app.
 
-* `paths` Array of file paths.
-* `options` Import options.
-	* `readtype` How to read the imported files. Can be `image`, `buffer` or `text` (default).
-	* `errorbox` Whether to display an error dialog if Blockbench can't load the file
+* `paths: Array` List of file paths.
+* `options: Object` Import options.
+	* `readtype: String` How to read the imported files. Can be `image`, `buffer` or `text` (default).
+	* `errorbox: Boolean` Whether to display an error dialog if Blockbench can't load the file
 * `callback`: Function. Called after all files have been read.
 	* `files`: Array of imported and read files
-		* `path` Path to the file. Will only return the name in the web app
-		* `name` File name
-		* `content` Content of the file. String for plain text files, base64 string for images (only .tga images or images on the web app)
+		* `path: String` Path to the file. Will only return the name in the web app
+		* `name: String` File name
+		* `content: String` Content of the file. String for plain text files, base64 string for images (only .tga images or images on the web app)
 
 ## Export
 
-### Blockbench.export( options, callback )
+#### Blockbench.export( options, callback )
 
 Opens a file save dialog to ask where to save the file. In most browsers, the file will just get downloaded with the default name.
 
@@ -83,7 +70,7 @@ Opens a file save dialog to ask where to save the file. In most browsers, the fi
 * `callback`: Function. Called after the file has been exported.
 	* `path` The path the file has been exported to. Only on desktop app.
 
-### Blockbench.writeFile( path, options, callback )
+#### Blockbench.writeFile( path, options, callback )
 
 Writes a file at the specified path.
 
@@ -99,21 +86,21 @@ Writes a file at the specified path.
 
 Listen to and dispatch Blockbench-specific events
 
-### Blockbench.on( event_id, callback )
+#### Blockbench.on( event_id, callback )
 
 Runs a function when Blockbench emits a specific event
 
 * `event_id` Event to listen for
 * `callback` Function to execute. Has one argument `data`.
 
-### Blockbench.dispatchEvent( event_id, data )
+#### Blockbench.dispatchEvent( event_id, data )
 
 Triggers an event.
 
 * `event_id` Name of the event,
 * `data` Data to submit to the listeners
 
-### Blockbench.removeEventListener( event_id, callback)
+#### Blockbench.removeEventListener( event_id, callback)
 
 Removes an event listener using the `event_id` and `callback`. Should be used in `onunload` in a plugin to clear event listeners.
 
@@ -154,7 +141,7 @@ Removes an event listener using the `event_id` and `callback`. Should be used in
 
 ## Drag and Drop Files
 
-### Blockbench.addDragHandler( id, options, callback )
+#### Blockbench.addDragHandler( id, options, callback )
 
 Handles file drop events for the specified file types
 
@@ -172,7 +159,7 @@ Handles file drop events for the specified file types
 		* `name` File name
 		* `content` Content of the file. String for plain text files, base64 string for images (only .tga images or images on the web app)
 
-### Blockbench.removeDragHandler( id )
+#### Blockbench.removeDragHandler( id )
 
 Removes and disables a drag handler using its ID.
 
@@ -180,7 +167,7 @@ Removes and disables a drag handler using its ID.
 
 Icons are used throughout Blockbench in actions, menus and plugins. Google Material icons, Font Awesome Regular, Solid and Brands as well as a set of custom Blockbench icons are available.
 
-### Blockbench.getIconNode( string[, color])
+#### Blockbench.getIconNode( string[, color])
 
 Returns a HTML node for the specified icon.
 
@@ -231,72 +218,4 @@ Returns a HTML node for the specified icon.
 	* `icon-format_java`
 	* `icon-format_optifine`
 	* `icon-format_bedrock_legacy`
-
-## Interface
-
-### Blockbench.showQuickMessage( message[, time] )
-
-Displays a quick message in the middle of the Blockbench interface
-
-* `message` Message to display. Can be a translation string
-* `time` How long to display the message in miliseconds. Defaults to 1000 miliseconds.
-
-### Blockbench.showStatusMessage( message[, time] )
-
-Displays a message in the status bar of Blockbench.
-
-* `message` Message to display. Can be a translation string
-* `time` How long to display the message in miliseconds. Defaults to 1000 miliseconds.
-
-### Blockbench.setStatusBarText( text )
-
-Sets a text to the status bar
-
-* `text` Text to display. If undefined, it will return to the old value.
-
-### Blockbench.setProgress( progress )
-
-Sets the progress bar below the status bar and in the taskbar/dock.
-
-* `progress` Progress (0 is empty, 1 is full)
-
-### Blockbench.showMessageBox( options, cb )
-
-Shows a simple message box with a title, message, an icon and buttons 
-
-* `options` Object
-	* `buttons` Array or strings used to generate the buttons
-	* `confirm` Index of the button used to confirm the dialog
-	* `cancel` Index of the button used to cancel the dialog
-	* `translateKey` Translation key used to auto-fill the title and message from translations
-	* `title` Dialog Title
-	* `message` Dialog content
-	* `icon` Icon string, see [#Icons](#icons)
-	* `width` Dialog width in pixels
-* `callback` Called when the user exits the dialog using the buttons.
-	* `result` Argument, the index of the clicked button within the buttons array.
-
-
-### Blockbench.textPrompt( title, value, callback )
-
-Prompts the user to enter or edit a text.
-
-* `title` Dialog title
-* `value` Before value of the text
-* `callback` Runs when the user confirms the prompt
-	* `text` Only parameter, the text entered by the user
-
-### Blockbench.openLink( link )
-
-Opens a link in an external browser window or new tab.
-
-### Blockbench.notification( title, text[, icon])
-
-Displays a push notification. In browsers, the user has to accept notifications first.
-
-* `title` Notification title
-* `text` Notification content
-* `icon` Notification icon, defaults to the Blockbench icon
-
-
 
