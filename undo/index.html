@@ -65,7 +65,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../dialog/">Dialog</a>
+    <a class="" href="../ui/">Interface</a>
 	    </li>
           
             <li class="toctree-l1 current">
@@ -137,40 +137,85 @@
                 <h1 id="undo">Undo</h1>
 <h2 id="creating-an-undo-point">Creating an undo point</h2>
 <p>When modifying elements, textures, animations or anything else about the model, the changes need to be registered to the Undo system. This will a) create an Undo point to allow the user to undo the changes and b) synchronize the model to other users in an Edit Session. This can be achieved using Undo.initEdit and finishEdit.</p>
-<h3 id="undoinitedit-aspects">Undo.initEdit( aspects )</h3>
+<h4 id="undoinitedit-aspects">Undo.initEdit( aspects )</h4>
 <p>Initializes an edit. Call this when you are about to do an edit, before changing anything.</p>
 <ul>
 <li><code>aspects</code>. Which aspects of the model to save. See <a href="#aspects">#Aspects</a></li>
 </ul>
-<h3 id="undofinishedit-edit_name-aspects">Undo.finishEdit( edit_name[, aspects] )</h3>
+<h4 id="undofinishedit-edit_name-aspects">Undo.finishEdit( edit_name[, aspects] )</h4>
+<p>Wraps up and saves an edit. Call this function after doing your edit.</p>
 <ul>
 <li><code>action_name</code> Name of the performed edit.</li>
 <li><code>aspects</code> Optional. If the set of aspects you are editing has changed, provide the changed aspects.</li>
 </ul>
 <h2 id="aspects">Aspects</h2>
 <p>Aspects are used to tell Blockbench which parts of the model to save in an undo point. All aspects are within one <code>aspects</code> object. When adding or removing elements, textures etc., make sure the objects in question are stated in the first but not in the second aspects, or vice versa.</p>
-<h3 id="selection">selection</h3>
-<p>If true, the element and group selection will be saved</p>
-<h3 id="elements">elements</h3>
-<p>Array of all elements (cubes and locators) to save.</p>
-<h3 id="outliner">outliner</h3>
-<p>If true, the complete outliner structure will be saved. This includes group data like names etc.</p>
-<h3 id="group">group</h3>
-<p>A single group.</p>
-<h3 id="textures">textures</h3>
-<p>An array of textures.</p>
-<h3 id="bitmap">bitmap</h3>
-<p>If true, the content of the listed textures will be saved.</p>
-<h3 id="uv_mode">uv_mode</h3>
-<p>When true, saves the current UV mode and project resolution settings.</p>
-<h3 id="animations">animations</h3>
-<p>Array of animations</p>
-<h3 id="keyframes">keyframes</h3>
-<p>Array of animation keyframes</p>
-<h3 id="display_slots">display_slots</h3>
-<p>Array of display slot ids, like <code>thirdperson_righthand</code> or <code>ground</code></p>
-<h3 id="uv_only">uv_only</h3>
-<p>If true, only UV and face information of cubes will be saved.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selection</td>
+<td>If true, the element and group selection will be saved</td>
+<td><code>{selection: true}</code></td>
+</tr>
+<tr>
+<td>elements</td>
+<td>Array of all elements (cubes and locators) to save.</td>
+<td><code>{elements: [cube1, cube2, locator]}</code></td>
+</tr>
+<tr>
+<td>outliner</td>
+<td>If true, the complete outliner structure will be saved. This includes group data like names etc.</td>
+<td><code>{outliner: true}</code></td>
+</tr>
+<tr>
+<td>group</td>
+<td>A single group.</td>
+<td><code>{group: Group.selected}</code></td>
+</tr>
+<tr>
+<td>textures</td>
+<td>An array of textures.</td>
+<td><code>{textures: [texture]}</code></td>
+</tr>
+<tr>
+<td>bitmap</td>
+<td>If true, the content of the listed textures will be saved.</td>
+<td><code>{textures: [texture], bitmap: true}</code></td>
+</tr>
+<tr>
+<td>uv_mode</td>
+<td>When true, saves the current UV mode and project resolution settings.</td>
+<td><code>{uv_mode: true}</code></td>
+</tr>
+<tr>
+<td>animations</td>
+<td>Array of animations</td>
+<td><code>{animations: [Animator.selected]}</code></td>
+</tr>
+<tr>
+<td>keyframes</td>
+<td>Array of animation keyframes</td>
+<td><code>{keyframes: [keyframe]}</code></td>
+</tr>
+<tr>
+<td>display_slots</td>
+<td>Array of display slot ids</td>
+<td><code>{display_slots: ['thirdperson_righthand', 'head']}</code></td>
+</tr>
+<tr>
+<td>uv_only</td>
+<td>If true, only UV and face information of cubes will be saved.</td>
+<td><code>{elements. Cube.selected, uv_only: true}</code></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -181,7 +226,7 @@
         <a href="../utility/" class="btn btn-neutral float-right" title="Utility">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../dialog/" class="btn btn-neutral" title="Dialog"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ui/" class="btn btn-neutral" title="Interface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -207,7 +252,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../dialog/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../ui/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../utility/" style="color: #fcfcfc">Next &raquo;</a></span>

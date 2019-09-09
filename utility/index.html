@@ -65,7 +65,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../dialog/">Dialog</a>
+    <a class="" href="../ui/">Interface</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -143,26 +143,26 @@
                 <h1 id="utility">Utility</h1>
 <p>Blockbench comes with a bunch of custom utility functions to make the life of developers easier.</p>
 <h2 id="general-things">General Things</h2>
-<h3 id="condition-condition-context">Condition( condition, context )</h3>
+<h4 id="condition-condition-booleanfunctionundefined-context-object">Condition( condition: Boolean/Function/undefined [, context: Object ])</h4>
 <p>Returns true if the condition checks out. Conditions can be
 * Simple booleans
 * Functions returning a value
 * If the condition is undefined, it will return true</p>
-<h3 id="oneliner-data">oneLiner( data )</h3>
+<h4 id="oneliner-data-object">oneLiner( data: Object )</h4>
 <p>Used as a wrapper for an object to tell the JSON exporter to print the entire Object in one line.</p>
-<h3 id="cl-args">cl( args )</h3>
+<h4 id="cl">cl()</h4>
 <p>A simple shortcut for <code>console.log</code></p>
-<h3 id="guid">guid()</h3>
-<p>Generates a uuid.</p>
-<h3 id="isuuid-uuid">isUUID( uuid )</h3>
+<h4 id="guid">guid()</h4>
+<p>Generates a uuid. Example: <code>df818b11-0785-2753-599a-95d6818ed846</code></p>
+<h4 id="isuuid-uuid-string">isUUID( uuid: String )</h4>
 <p>returns true if <code>uuid</code> is in fact a UUID.</p>
-<h3 id="bbuid-length">bbuid( length )</h3>
+<h4 id="bbuid-length-number">bbuid( length: Number )</h4>
 <p>Returns a short random unique identifier using the given <code>length</code> and the characters [a-zA-Z0-9].</p>
-<h3 id="autostringify-object">autoStringify( object )</h3>
+<h4 id="autostringify-object-object">autoStringify( object: Object )</h4>
 <p>Compiles the <code>object</code> to a JSON string using the Blockbench custom JSON compiler under consideration of the minified output setting.</p>
-<h3 id="pathtoname-path-extension">pathToName( path[, extension] )</h3>
+<h4 id="pathtoname-path-string-extension-string">pathToName( path: String[, extension: String] )</h4>
 <p>Turns the file path <code>path</code> into the corresponding file name, including file extension of extension is set to true.</p>
-<h3 id="pathtoextension-path">pathToExtension( path )</h3>
+<h4 id="pathtoextension-path-string">pathToExtension( path: String )</h4>
 <p>Returns the extension of a file path or name.</p>
 <h2 id="libraries">Libraries</h2>
 <h3 id="dom-manipulation">DOM Manipulation</h3>
@@ -173,61 +173,61 @@ Images can be manupulated using <a href="https://github.com/oliver-moran/jimp">J
 <h3 id="3d-editor">3D Editor</h3>
 <p>THREE.JS is used to display and handle the 3D preview. Read the <a href="https://threejs.org/docs/">three.js docs</a> for more info.</p>
 <h2 id="math">Math</h2>
-<h3 id="mathradtodeg-rad">Math.radToDeg( rad )</h3>
+<h4 id="mathradtodeg-rad">Math.radToDeg( rad )</h4>
 <p>Converts radiants into degrees</p>
-<h3 id="mathdegtorad-deg">Math.degToRad( deg )</h3>
+<h4 id="mathdegtorad-deg">Math.degToRad( deg )</h4>
 <p>Converts degrees into radiants</p>
-<h3 id="mathroundto-number-digits">Math.roundTo( number, digits )</h3>
+<h4 id="mathroundto-number-digits">Math.roundTo( number, digits )</h4>
 <p>Rounds the number <code>number</code> to <code>digits</code> decimal places.</p>
-<h3 id="mathlerp-a-b-m">Math.lerp( a, b, m )</h3>
+<h4 id="mathlerp-a-b-m">Math.lerp( a, b, m )</h4>
 <p>Lerps between the values <code>a</code> and <code>b</code> using <code>lerp</code> (between 0 and 1)</p>
-<h3 id="mathisbetween-n-a-b">Math.isBetween( n, a, b )</h3>
+<h4 id="mathisbetween-n-a-b">Math.isBetween( n, a, b )</h4>
 <p>Returns true if <code>n</code> is in between <code>a</code> and <code>b</code>.</p>
-<h3 id="mathtrimdeg-deg">Math.trimDeg( deg )</h3>
+<h4 id="mathtrimdeg-deg">Math.trimDeg( deg )</h4>
 <p>Trims the given degree number to a normalized value between -180 and 180.</p>
-<h3 id="mathispoweroftwo-x">Math.isPowerOfTwo( x )</h3>
+<h4 id="mathispoweroftwo-x">Math.isPowerOfTwo( x )</h4>
 <p>Returns true if <code>x</code> is a power of two.</p>
-<h3 id="mathrandomab-a-b">Math.randomab( a, b )</h3>
+<h4 id="mathrandomab-a-b">Math.randomab( a, b )</h4>
 <p>Returns a random number between <code>a</code> and <code>b</code></p>
-<h3 id="mathclamp-n-a-b">Math.clamp( n, a, b )</h3>
+<h4 id="mathclamp-n-a-b">Math.clamp( n, a, b )</h4>
 <p>Clamps the number <code>n</code> to a number in between or equal to <code>a</code> or <code>b</code>.</p>
-<h3 id="matharemultiples-a-b">Math.areMultiples( a, b )</h3>
+<h4 id="matharemultiples-a-b">Math.areMultiples( a, b )</h4>
 <p>Returns true if <code>a</code> is a multiple of <code>b</code> or vice versa.</p>
-<h3 id="trimfloatnumber-n">trimFloatNumber( n )</h3>
-<p>Trims the given float to a readable by rounding it to 4 decimal places maximum, to avoid values such as 1.59999999999</p>
-<h3 id="getaxisnumber-letter">getAxisNumber( letter )</h3>
+<h4 id="trimfloatnumber-n">trimFloatNumber( n )</h4>
+<p>Trims the given float to a readable by rounding it to 4 decimal places maximum, to avoid values such as <code>1.59999999</code></p>
+<h4 id="getaxisnumber-letter-string">getAxisNumber( letter: String )</h4>
 <p>Converts an axis letter (<code>x, y, z</code>) into an axis number (<code>0, 1, 2</code>)</p>
-<h3 id="getaxisletter-number">getAxisLetter( number )</h3>
+<h4 id="getaxisletter-number-number">getAxisLetter( number: Number )</h4>
 <p>Converts an axis number (<code>0, 1, 2</code>) into an axis letter (<code>x, y, z</code>)</p>
 <h2 id="dates">Dates</h2>
-<h3 id="dategetdatearray">Date.getDateArray()</h3>
+<h4 id="dategetdatearray">Date.getDateArray()</h4>
 <p>Returns an array of the date of <code>Date</code> in the format <code>[d, m, yyyy]</code></p>
-<h3 id="dategetdatestring">Date.getDateString()</h3>
+<h4 id="dategetdatestring">Date.getDateString()</h4>
 <p>Returns a string of the data <code>Date</code> in the format <code>"dd.mm.yyyy"</code></p>
-<h3 id="datedayofyear">Date.dayOfYear()</h3>
+<h4 id="datedayofyear">Date.dayOfYear()</h4>
 <p>Returns the day of the year</p>
 <h2 id="array">Array</h2>
-<h3 id="arraysafepush-item">Array.safePush( item )</h3>
+<h4 id="arraysafepush-item-any">Array.safePush( item: Any )</h4>
 <p>Pushes <code>item</code> to <code>Array</code> only if it is not in the array yet.</p>
-<h3 id="arrayequals-array">Array.equals( array )</h3>
+<h4 id="arrayequals-array-array">Array.equals( array: Array )</h4>
 <p>Checks if <code>Array</code> and <code>array</code> have the same content.</p>
-<h3 id="arrayremove-item">Array.remove( item )</h3>
+<h4 id="arrayremove-item-any">Array.remove( item: Any )</h4>
 <p>Removes <code>item</code> from <code>Array</code></p>
-<h3 id="arrayempty">Array.empty()</h3>
+<h4 id="arrayempty">Array.empty()</h4>
 <p>Empties the array</p>
-<h3 id="arraypurge">Array.purge()</h3>
+<h4 id="arraypurge">Array.purge()</h4>
 <p>Empties an array while also updating it for VueJS</p>
-<h3 id="arrayfindinarray-key-value">Array.findInArray( key, value )</h3>
+<h4 id="arrayfindinarray-key-string-value-any">Array.findInArray( key: String, value: Any )</h4>
 <p>Find an object in the array by looking for a <code>key: value</code> match</p>
-<h3 id="arraylast">Array.last()</h3>
+<h4 id="arraylast">Array.last()</h4>
 <p>Returns the last item of the array</p>
-<h3 id="arraypositiveitems">Array.positiveItems()</h3>
+<h4 id="arraypositiveitems">Array.positiveItems()</h4>
 <p>Returns the number of truthy items in the array.</p>
-<h3 id="arrayallequal-value">Array.allEqual( value )</h3>
+<h4 id="arrayallequal-value-any">Array.allEqual( value: Any )</h4>
 <p>Returns true if all items in the array equal <code>value</code>.</p>
-<h3 id="arrayrandom">Array.random()</h3>
+<h4 id="arrayrandom">Array.random()</h4>
 <p>Returns a random item of the array.</p>
-<h3 id="arrayforeachreverse-callback">Array.forEachReverse( callback )</h3>
+<h4 id="arrayforeachreverse-callback-function">Array.forEachReverse( callback: Function )</h4>
 <p>Runs the function <code>callback</code> for each item in the list, starting from the end.</p>
               
             </div>

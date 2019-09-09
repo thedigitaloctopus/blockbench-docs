@@ -65,7 +65,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../dialog/">Dialog</a>
+    <a class="" href="../ui/">Interface</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -97,6 +97,8 @@
             <li><a class="toctree-l3" href="#loading-textures">Loading Textures</a></li>
         
             <li><a class="toctree-l3" href="#updating-textures">Updating textures</a></li>
+        
+            <li><a class="toctree-l3" href="#texture-menu">Texture Menu</a></li>
         
         </ul>
     
@@ -167,52 +169,73 @@
 <li><code>mode</code> How the texture source is handled. Can be <code>'link'</code> or <code>'bitmap'</code>. Link textures are loaded from a path on the computer, so textures in the web app are always mode bitmap.</li>
 <li><code>uuid</code> Texture uuid.</li>
 </ul>
-<h3 id="canvasmaterialstextureuuid">Canvas.materials[texture.uuid]</h3>
+<h4 id="canvasmaterialstextureuuid">Canvas.materials[texture.uuid]</h4>
 <p>THREE.JS materials are saved in a separate location to increase performance. You can get the material using the texture's uuid.</p>
-<h3 id="texturegeterrormessage">texture.getErrorMessage()</h3>
+<h4 id="texturegeterrormessage">texture.getErrorMessage()</h4>
 <p>Returns the translated error message of the texture.</p>
-<h3 id="textureextend-data">texture.extend( data )</h3>
+<h4 id="textureextend-data">texture.extend( data )</h4>
 <p>Copy properties from <code>data</code> into the texture.</p>
-<h3 id="load-callback">load( callback )</h3>
+<h4 id="load-callback">load( callback )</h4>
 <p>Loads the texture by updating its source.</p>
 <ul>
 <li><code>callback</code> function to call after the update is finished. The update is asynchronous.</li>
 </ul>
 <h2 id="loading-textures">Loading Textures</h2>
-<h3 id="texturefromjavalink-link-path_array">texture.fromJavaLink( link, path_array )</h3>
+<h4 id="texturefromjavalink-link-path_array">texture.fromJavaLink( link, path_array )</h4>
 <p>Tries to load the texture from a java edition resource pack using the relative path provided in the model file and the absolute path of the model.</p>
-<h3 id="texturefromfile-file">texture.fromFile( file )</h3>
+<h4 id="texturefromfile-file">texture.fromFile( file )</h4>
 <p>Loads the texture from a file object, as used in Blockbench.import.</p>
-<h3 id="texturefrompath-path">texture.fromPath( path )</h3>
+<h4 id="texturefrompath-path">texture.fromPath( path )</h4>
 <p>Loads the texture from an absolute path.</p>
-<h3 id="texturefromdataurl-data_url">texture.fromDataURL( data_url )</h3>
+<h4 id="texturefromdataurl-data_url">texture.fromDataURL( data_url )</h4>
 <p>Loads the texture from a data URL (base64 encoded image)</p>
-<h3 id="texturefromdefaultpack">texture.fromDefaultPack()</h3>
+<h4 id="texturefromdefaultpack">texture.fromDefaultPack()</h4>
 <p>Attempts to load the texture from the default resource pack if defined in the Blockbench settings.</p>
-<h3 id="textureloademptyerror_id">texture.loadEmpty(error_id)</h3>
+<h4 id="textureloademptyerror_id">texture.loadEmpty(error_id)</h4>
 <p>Loads the texture with an empty (error) texture and sets the error code to <code>error_id</code>.</p>
-<h3 id="textureadd-undo">texture.add( undo )</h3>
+<h4 id="textureadd-undo">texture.add( undo )</h4>
 <p>Adds the texture to Blockbench and takes care of applying the texture to all cubes if required by the format.</p>
 <ul>
 <li><code>undo</code> Whether to create an undo point for adding the texture.</li>
 </ul>
-<h3 id="texturegeneratefolder-path">texture.generateFolder( path )</h3>
+<h4 id="texturegeneratefolder-path">texture.generateFolder( path )</h4>
 <p>Generate the java edition texture folder from a given path.</p>
 <h2 id="updating-textures">Updating textures</h2>
-<h3 id="textureupdatesource-data_url">texture.updateSource( data_url )</h3>
+<h4 id="textureupdatesource-data_url">texture.updateSource( data_url )</h4>
 <p>Updates the source of the texture. This is used if the texture gets edited. Also updates the material and UV Editor view of the texture</p>
-<h3 id="textureupdatematerial">texture.updateMaterial()</h3>
+<h4 id="textureupdatematerial">texture.updateMaterial()</h4>
 <p>Only update the THREE.JS material of the texture.</p>
-<h3 id="texturereopen-force">texture.reopen( force )</h3>
+<h4 id="texturereopen-force">texture.reopen( force )</h4>
 <p>Opens a file dialog to replace the texture source with another file.</p>
 <ul>
 <li><code>force</code> If true, Blockbench won't show a warning message if the texture has unsaved changes.</li>
 </ul>
-<h3 id="texturereloadtexture">texture.reloadTexture()</h3>
+<h4 id="texturereloadtexture">texture.reloadTexture()</h4>
 <p>Reloads the texture to update changes to the file. This is usually not necessary as the texture updates automatically when there are any changes.</p>
-<h3 id="textureselect-event">texture.select( event )</h3>
+<h4 id="textureselect-event">texture.select( event )</h4>
 <p>Select this texture.</p>
-<h3 id="_1"></h3>
+<h4 id="textureremove-no_update">texture.remove( no_update )</h4>
+<p>Removes the texture.</p>
+<ul>
+<li><code>no_update</code> If true, don't update the interface and don't create an undo point </li>
+</ul>
+<h4 id="enableparticle">enableParticle()</h4>
+<p>Marks this texture as particle texture for java edition models.</p>
+<h4 id="fillparticle">fillParticle()</h4>
+<p>Marks this texture as particle texture for java edition models, unless there is already a particle texture.</p>
+<h4 id="apply-all">apply( all )</h4>
+<p>Applies the texture to all selected cubes. Creates an undo point.</p>
+<ul>
+<li><code>all</code> When true, apply the texture to all faces</li>
+</ul>
+<h2 id="texture-menu">Texture Menu</h2>
+<h4 id="textureopenfolder">texture.openFolder()</h4>
+<p>Show the source file of the texture in a new Explorer/Finder window.</p>
+<h4 id="textureopeneditor">texture.openEditor()</h4>
+<p>Open the texture in the preferred image editor as specified in the settings.</p>
+<h4 id="textureshowcontextmenu-event">texture.showContextMenu( event )</h4>
+<p>Show the context menu of the texture using the position of the event.</p>
+<h4 id="textureopenmenu">texture.openMenu()</h4>
               
             </div>
           </div>

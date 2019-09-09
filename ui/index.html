@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Dialog - Blockbench</title>
+  <title>Interface - Blockbench</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Dialog";
-    var mkdocs_page_input_path = "dialog.md";
+    var mkdocs_page_name = "Interface";
+    var mkdocs_page_input_path = "ui.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -65,19 +65,20 @@
           
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">Dialog</a>
+    <a class="current" href="./">Interface</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#dialog">Dialog</a></li>
+    <li class="toctree-l2"><a href="#interface">Interface</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#new-dialog-options">new Dialog( options )</a></li>
+            <li><a class="toctree-l3" href="#dialog">Dialog</a></li>
+        
+            <li><a class="toctree-l3" href="#messages">Messages</a></li>
+        
+            <li><a class="toctree-l3" href="#miscellaneous">Miscellaneous</a></li>
         
         </ul>
-    
-
-    <li class="toctree-l2"><a href="#example">Example</a></li>
     
 
     </ul>
@@ -125,7 +126,7 @@
     
       
     
-    <li>Dialog</li>
+    <li>Interface</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -135,9 +136,11 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="dialog">Dialog</h1>
-<h2 id="new-dialog-options">new Dialog( options )</h2>
-<p>Creates a custom dialog</p>
+                <h1 id="interface">Interface</h1>
+<h2 id="dialog">Dialog</h2>
+<p>This is a method to create a completely custom dialog window.</p>
+<h3 id="new-dialog-options">new Dialog( options )</h3>
+<p>Creates a new dialog.</p>
 <ul>
 <li><code>options</code> Object<ul>
 <li><code>title</code> Title of the dialog</li>
@@ -175,7 +178,7 @@
 <p>Triggers the confirm event of the dialog.</p>
 <h3 id="dialogcancel">Dialog.cancel()</h3>
 <p>Triggers the cancel event of the dialog.</p>
-<h1 id="example">Example</h1>
+<h3 id="example">Example</h3>
 <pre><code class="javascript">new Dialog({
     id: 'generate_tree',
     title: 'Tree Generator',
@@ -189,6 +192,69 @@
     }
 }).show()
 </code></pre>
+
+<h2 id="messages">Messages</h2>
+<h3 id="blockbenchshowmessagebox-options-cb">Blockbench.showMessageBox( options, cb )</h3>
+<p>Shows a simple message box with a title, message, an icon and buttons </p>
+<ul>
+<li><code>options</code> Object<ul>
+<li><code>buttons</code> Array or strings used to generate the buttons</li>
+<li><code>confirm</code> Index of the button used to confirm the dialog</li>
+<li><code>cancel</code> Index of the button used to cancel the dialog</li>
+<li><code>translateKey</code> Translation key used to auto-fill the title and message from translations</li>
+<li><code>title</code> Dialog Title</li>
+<li><code>message</code> Dialog content</li>
+<li><code>icon</code> Icon string, see <a href="#icons">#Icons</a></li>
+<li><code>width</code> Dialog width in pixels</li>
+</ul>
+</li>
+<li><code>callback</code> Called when the user exits the dialog using the buttons.<ul>
+<li><code>result</code> Argument, the index of the clicked button within the buttons array.</li>
+</ul>
+</li>
+</ul>
+<h3 id="blockbenchtextprompt-title-value-callback">Blockbench.textPrompt( title, value, callback )</h3>
+<p>Prompts the user to enter or edit a text.</p>
+<ul>
+<li><code>title</code> Dialog title</li>
+<li><code>value</code> Before value of the text</li>
+<li><code>callback</code> Runs when the user confirms the prompt<ul>
+<li><code>text</code> Only parameter, the text entered by the user</li>
+</ul>
+</li>
+</ul>
+<h3 id="blockbenchshowquickmessage-message-time">Blockbench.showQuickMessage( message[, time] )</h3>
+<p>Displays a quick message in the middle of the Blockbench interface</p>
+<ul>
+<li><code>message</code> Message to display. Can be a translation string</li>
+<li><code>time</code> How long to display the message in miliseconds. Defaults to 1000 miliseconds.</li>
+</ul>
+<h3 id="blockbenchshowstatusmessage-message-time">Blockbench.showStatusMessage( message[, time] )</h3>
+<p>Displays a message in the status bar of Blockbench.</p>
+<ul>
+<li><code>message</code> Message to display. Can be a translation string</li>
+<li><code>time</code> How long to display the message in miliseconds. Defaults to 1000 miliseconds.</li>
+</ul>
+<h3 id="blockbenchsetstatusbartext-text">Blockbench.setStatusBarText( text )</h3>
+<p>Sets a text to the status bar</p>
+<ul>
+<li><code>text</code> Text to display. If undefined, it will return to the old value.</li>
+</ul>
+<h3 id="blockbenchnotification-title-text-icon">Blockbench.notification( title, text[, icon])</h3>
+<p>Displays a push notification. In browsers, the user has to accept notifications first.</p>
+<ul>
+<li><code>title</code> Notification title</li>
+<li><code>text</code> Notification content</li>
+<li><code>icon</code> Notification icon, defaults to the Blockbench icon</li>
+</ul>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<h3 id="blockbenchsetprogress-progress">Blockbench.setProgress( progress )</h3>
+<p>Sets the progress bar below the status bar and in the taskbar/dock.</p>
+<ul>
+<li><code>progress</code> Progress (0 is empty, 1 is full)</li>
+</ul>
+<h3 id="blockbenchopenlink-link">Blockbench.openLink( link )</h3>
+<p>Opens a link in an external browser window or new tab.</p>
               
             </div>
           </div>
