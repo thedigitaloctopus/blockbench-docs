@@ -83,6 +83,11 @@
     <a class="" href="../formats/">Formats</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../textures/">Textures</a>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -117,8 +122,108 @@
               
                 <h1 id="outliner">Outliner</h1>
 <h2 id="outliner-management">Outliner management</h2>
-<h2 id="cube">Cube</h2>
+<h3 id="outlinerelement">OutlinerElement()</h3>
+<p>Parent of all groups and elements in the outliner. All properties and methods can be used on groups and elements.</p>
+<ul>
+<li><code>title</code> Title used for the hover tooltip</li>
+<li><code>type</code> Type of the group or element</li>
+<li><code>menu</code> Context menu of the group or element type.</li>
+<li><code>selected</code> Array (or single object in case of group) or the selected elements of this type</li>
+<li><code>all</code> Array of all groups or elements of this type</li>
+</ul>
+<h4 id="outlinerelementinit">OutlinerElement.init()</h4>
+<p>Initializes the element so it can be used in the outliner.</p>
+<h4 id="outlinerelementaddto-destination">OutlinerElement.addTo( destination )</h4>
+<p>Adds the element to a specific place in the outliner.
+* <code>destination</code> Can be a group, element or undefined for the outliner root.</p>
+<h4 id="outlinerelementsortinbefore-destination-index_mod">OutlinerElement.sortInBefore( destination, index_mod )</h4>
+<p>Sorts the element in before another element.
+* <code>destination</code> Reference group or element
+* <code>index_mod</code> Modifier for the index. If 1, the element will be placed after (below) the destination.</p>
+<h4 id="outlinerelementgetparentarray">OutlinerElement.getParentArray()</h4>
+<p>Returns the children array of the parent that the group or element is in.</p>
+<h4 id="outlinerelementshowinoutliner">OutlinerElement.showInOutliner()</h4>
+<p>Unfolds the outliner and scrolls up or down if necessary to show the group or element.</p>
+<h4 id="outlinerelementupdateelement">OutlinerElement.updateElement()</h4>
+<p>Updates the Vue node of the element.</p>
+<h4 id="outlinerelementremove">OutlinerElement.remove()</h4>
+<p>Removes the element.</p>
+<h4 id="outlinerelementrename">OutlinerElement.rename()</h4>
+<p>Marks the name of the group or element in the outliner for renaming.</p>
+<h4 id="outlinerelementsavename">OutlinerElement.saveName()</h4>
+<p>Saves the changed name of the element by creating an undo point and making the name unique if necessary.</p>
+<h4 id="outlinerelementcreateuniquename">OutlinerElement.createUniqueName()</h4>
+<p>Create a unique name for the group or element by adding a number at the end or increasing it.</p>
+<h4 id="outlinerelementischildof-group-max_levels">OutlinerElement.isChildOf( group, max_levels )</h4>
+<p>Checks of the group or element is a child of <code>group</code>.
+* <code>group</code> A group
+* <code>max_levels</code> The maximum number of generations that can be between the element and <code>group</code>.</p>
+<h4 id="outlinerelementshowcontextmenu-event">OutlinerElement.showContextMenu( event )</h4>
+<p>Displays the context menu of the element
+* <code>event</code>. Mouse event, determines where the context menu spawns.</p>
 <h2 id="group">Group</h2>
+<h3 id="new-group-data">new Group( data )</h3>
+<ul>
+<li><code>data</code> Object<ul>
+<li><code>name</code> Group name</li>
+<li><code>children</code> Array of the groups content</li>
+<li><code>origin</code> Array of the group pivot point</li>
+<li><code>rotation</code> Array of the group rotation</li>
+<li><code>reset</code> If a bone, whether to reset the informations of inherited bones in bedrock edition.</li>
+<li><code>shade</code> Whether to shade the contents of the group</li>
+<li><code>selected</code> Whether the group is selected</li>
+<li><code>visibility</code> Whether the group is visible</li>
+<li><code>export</code> Whether to export the entire group</li>
+<li><code>autouv</code> Auto UV setting for the children. Can be 0, 1 or 2.</li>
+<li><code>parent</code> Parent group or <code>'root'</code></li>
+<li><code>isOpen</code> Whether the group is currently opened in the outliner</li>
+<li><code>mesh</code> 3D representation of the group when using bone rig</li>
+</ul>
+</li>
+</ul>
+<h3 id="groupselected">Group.selected</h3>
+<p>Static variable to get the currently selected groups. Note that children groups of this group can also have <code>selected</code> to make them appear selected in the outliner, but will not be treated as the primary selected group</p>
+<h4 id="groupextend-data">Group.extend( data )</h4>
+<p>Modify data of the group.
+* <code>data</code> Object of properties to apply to the group</p>
+<h4 id="groupselectchildren-event">Group.selectChildren( event )</h4>
+<p>Select the children of the group</p>
+<h4 id="groupselectlow-highlight">Group.selectLow( highlight )</h4>
+<p>Select the group and its children without marking it the selected group.
+* <code>highlight</code> Whether to highlight the group in the selection color in the outliner. Default is true.</p>
+<h4 id="groupunselect">Group.unselect()</h4>
+<p>Unselects the group</p>
+<h4 id="groupmatchesselection">Group.matchesSelection()</h4>
+<p>Returns true if the content of the group matches the current selection.</p>
+<h4 id="groupopenup">Group.openUp()</h4>
+<p>Opens the group and all of its ancestor groups.</p>
+<h4 id="groupremove-undo">Group.remove( undo )</h4>
+<p>Removes the group
+* <code>undo</code> If true, an undo point will be created.</p>
+<h4 id="groupresolve">Group.resolve()</h4>
+<p>Remove the group and leave all of its children in the parent array.</p>
+<h4 id="grouptransferorigin-origin">Group.transferOrigin( origin )</h4>
+<p>Move the origin of a bone to a specific location without visually affecting the position of it's content.
+* <code>origin</code> Array of the new 3D origin</p>
+<h4 id="groupsortcontent">Group.sortContent()</h4>
+<p>Sort the content of the group alphabetically. This will automatically create an undo point.</p>
+<h4 id="groupdiplicate">Group.diplicate()</h4>
+<p>Duplicate the group</p>
+<h4 id="groupgetsavecopy">Group.getSaveCopy()</h4>
+<p>Returns a copy of the group that can be used to save the group to a JSON file.</p>
+<h4 id="groupgetchildlesscopy">Group.getChildlessCopy()</h4>
+<p>Returns a copy of the group without the children. Internally used by the duplicate function.</p>
+<h4 id="groupcompile-undo">Group.compile( undo )</h4>
+<p>Generates a copy of the group that can be used for undo points or to save in block model files.
+* <code>undo</code> Make the copy work for undo points.</p>
+<h4 id="groupforeachchild-callback-type-for_self">Group.forEachChild( callback, type, for_self )</h4>
+<p>Run a funtion for each child of the group recursively.
+* <code>callback</code> Function to run for each child. First argument is the child.
+* <code>type</code> For which type to run the function. Can be <code>Group</code>, <code>NonGroup</code>, <code>Cube</code> etc. or undefined.
+* <code>for_self</code> Whether to also run the function on itself.</p>
+<h2 id="cube">Cube</h2>
+<p>Cubes represent regular cubes in the outliner. Cubes inherit all properties and methods from OutlinerElement and NonGroup.</p>
+<h3 id="new-cube-data-init">new Cube( data ).init()</h3>
 <h2 id="locator">Locator</h2>
               
             </div>

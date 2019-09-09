@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Textures - Blockbench</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Textures";
+    var mkdocs_page_input_path = "textures.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Blockbench</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plugin/">Plugin</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockbench/">Blockbench</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../dialog/">Dialog</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../utility/">Utility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../formats/">Formats</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Textures</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#textures">Textures</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#new-texture-data-uuid">new Texture( data, uuid )</a></li>
+        
+            <li><a class="toctree-l3" href="#loading-textures">Loading Textures</a></li>
+        
+            <li><a class="toctree-l3" href="#updating-textures">Updating textures</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Blockbench</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Textures</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="textures">Textures</h1>
+<p>Textures are saved in the global <code>textures</code> array. <code>textures.selected</code> will return the currently selected texture. If single_texture is enabled in the current format, only one texture can exist at a time.</p>
+<h2 id="new-texture-data-uuid">new Texture( data, uuid )</h2>
+<p>Creates a new texture</p>
+<ul>
+<li><code>id</code> Texture key used in java edition and OBJ models</li>
+<li><code>name</code> Texture name</li>
+<li><code>folder</code> Subfolder of the textures folder that the texture is in.</li>
+<li><code>namespace</code> Texture namespace, used for mods</li>
+<li><code>path</code> Full texture path</li>
+<li><code>particle</code> Whether to use the texture as the particle texture for java edition models</li>
+<li><code>source</code> Source string of the texture. Can either be a base64 string or a path. Paths will usually have <code>?2</code> or similar appended to make them update after being changed.</li>
+<li><code>selected</code> Whether the texture is selected</li>
+<li><code>show_icon</code> Whether the source of the texture should be displayed in the textures list.</li>
+<li><code>dark_box</code> If true, the UV editor will use a dark border for this texture. Calculated from the average color of the texture</li>
+<li><code>error</code> Numerical error code:<ul>
+<li><code>0</code> No errors</li>
+<li><code>1</code> File error, texture could not be loaded</li>
+<li><code>2</code> Invalid aspect ratio</li>
+<li><code>3</code> Placeholder texture, the actual texture gets defined by the parent model</li>
+</ul>
+</li>
+<li><code>width</code> Texture width</li>
+<li><code>height</code> Texture height</li>
+<li><code>ratio</code> Texture aspect ratio</li>
+<li><code>frameCount</code> Returns the frame count if the texture is an animated texture</li>
+<li><code>img</code> HTML Image instance of the texture</li>
+<li><code>saved</code> Whether the texture is saved</li>
+<li><code>mode</code> How the texture source is handled. Can be <code>'link'</code> or <code>'bitmap'</code>. Link textures are loaded from a path on the computer, so textures in the web app are always mode bitmap.</li>
+<li><code>uuid</code> Texture uuid.</li>
+</ul>
+<h3 id="canvasmaterialstextureuuid">Canvas.materials[texture.uuid]</h3>
+<p>THREE.JS materials are saved in a separate location to increase performance. You can get the material using the texture's uuid.</p>
+<h3 id="texturegeterrormessage">texture.getErrorMessage()</h3>
+<p>Returns the translated error message of the texture.</p>
+<h3 id="textureextend-data">texture.extend( data )</h3>
+<p>Copy properties from <code>data</code> into the texture.</p>
+<h3 id="load-callback">load( callback )</h3>
+<p>Loads the texture by updating its source.</p>
+<ul>
+<li><code>callback</code> function to call after the update is finished. The update is asynchronous.</li>
+</ul>
+<h2 id="loading-textures">Loading Textures</h2>
+<h3 id="texturefromjavalink-link-path_array">texture.fromJavaLink( link, path_array )</h3>
+<p>Tries to load the texture from a java edition resource pack using the relative path provided in the model file and the absolute path of the model.</p>
+<h3 id="texturefromfile-file">texture.fromFile( file )</h3>
+<p>Loads the texture from a file object, as used in Blockbench.import.</p>
+<h3 id="texturefrompath-path">texture.fromPath( path )</h3>
+<p>Loads the texture from an absolute path.</p>
+<h3 id="texturefromdataurl-data_url">texture.fromDataURL( data_url )</h3>
+<p>Loads the texture from a data URL (base64 encoded image)</p>
+<h3 id="texturefromdefaultpack">texture.fromDefaultPack()</h3>
+<p>Attempts to load the texture from the default resource pack if defined in the Blockbench settings.</p>
+<h3 id="textureloademptyerror_id">texture.loadEmpty(error_id)</h3>
+<p>Loads the texture with an empty (error) texture and sets the error code to <code>error_id</code>.</p>
+<h3 id="textureadd-undo">texture.add( undo )</h3>
+<p>Adds the texture to Blockbench and takes care of applying the texture to all cubes if required by the format.</p>
+<ul>
+<li><code>undo</code> Whether to create an undo point for adding the texture.</li>
+</ul>
+<h3 id="texturegeneratefolder-path">texture.generateFolder( path )</h3>
+<p>Generate the java edition texture folder from a given path.</p>
+<h2 id="updating-textures">Updating textures</h2>
+<h3 id="textureupdatesource-data_url">texture.updateSource( data_url )</h3>
+<p>Updates the source of the texture. This is used if the texture gets edited. Also updates the material and UV Editor view of the texture</p>
+<h3 id="textureupdatematerial">texture.updateMaterial()</h3>
+<p>Only update the THREE.JS material of the texture.</p>
+<h3 id="texturereopen-force">texture.reopen( force )</h3>
+<p>Opens a file dialog to replace the texture source with another file.</p>
+<ul>
+<li><code>force</code> If true, Blockbench won't show a warning message if the texture has unsaved changes.</li>
+</ul>
+<h3 id="texturereloadtexture">texture.reloadTexture()</h3>
+<p>Reloads the texture to update changes to the file. This is usually not necessary as the texture updates automatically when there are any changes.</p>
+<h3 id="textureselect-event">texture.select( event )</h3>
+<p>Select this texture.</p>
+<h3 id="_1"></h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../formats/" class="btn btn-neutral" title="Formats"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../formats/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
