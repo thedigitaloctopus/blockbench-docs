@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Undo - Blockbench</title>
+  <title>Modes - Blockbench</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Undo";
-    var mkdocs_page_input_path = "undo.md";
+    var mkdocs_page_name = "Modes";
+    var mkdocs_page_input_path = "modes.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -78,30 +78,26 @@
     <a class="" href="../actions/">Actions</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../undo/">Undo</a>
+	    </li>
+          
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">Undo</a>
+    <a class="current" href="./">Modes</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#undo">Undo</a></li>
+    <li class="toctree-l2"><a href="#modes">Modes</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#creating-an-undo-point">Creating an undo point</a></li>
-        
-            <li><a class="toctree-l3" href="#aspects">Aspects</a></li>
-        
-            <li><a class="toctree-l3" href="#example">Example</a></li>
+            <li><a class="toctree-l3" href="#new-mode-data-object">new Mode( data: Object )</a></li>
         
         </ul>
     
 
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../modes/">Modes</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -151,7 +147,7 @@
     
       
     
-    <li>Undo</li>
+    <li>Modes</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -161,96 +157,29 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="undo">Undo</h1>
-<h2 id="creating-an-undo-point">Creating an undo point</h2>
-<p>When modifying elements, textures, animations or anything else about the model, the changes need to be registered to the Undo system. This will a) create an Undo point to allow the user to undo the changes and b) synchronize the model to other users in an Edit Session. This can be achieved using Undo.initEdit and finishEdit.</p>
-<h4 id="undoinitedit-aspects">Undo.initEdit( aspects )</h4>
-<p>Initializes an edit. Call this when you are about to do an edit, before changing anything.</p>
+                <h1 id="modes">Modes</h1>
+<h3 id="new-mode-data-object"><code>new Mode( data: Object )</code></h3>
 <ul>
-<li><code>aspects</code>. Which aspects of the model to save. See <a href="#aspects">#Aspects</a></li>
+<li><code>data</code><ul>
+<li><code>id: String</code></li>
+<li><code>name: String</code> </li>
+<li><code>category: String</code> Category of this mode's keybinding.</li>
+<li><code>default_tool: Tool</code> Default tool that gets selected when joining this mode.</li>
+<li><code>center_windows: Array</code> Which center windows are visible in this mode. Options are <code>'preview'</code>, <code>'timeline'</code> and <code>'start_screen'</code>.</li>
+<li><code>selectCubes: Boolean</code> Whether the user can select cubes by left clicking in the preview</li>
+<li><code>hide_toolbars: Boolean</code> Hides the main toolbar</li>
+<li><code>condition: Condition</code></li>
+<li><code>onSelect: Function</code></li>
+<li><code>onUnselect: Function</code></li>
 </ul>
-<h4 id="undofinishedit-edit_name-aspects">Undo.finishEdit( edit_name[, aspects] )</h4>
-<p>Wraps up and saves an edit. Call this function after doing your edit.</p>
-<ul>
-<li><code>action_name</code> Name of the performed edit.</li>
-<li><code>aspects</code> Optional. If the set of aspects you are editing has changed, provide the changed aspects.</li>
+</li>
 </ul>
-<h2 id="aspects">Aspects</h2>
-<p>Aspects are used to tell Blockbench which parts of the model to save in an undo point. All aspects are within one <code>aspects</code> object. When adding or removing elements, textures etc., make sure the objects in question are stated in the first but not in the second aspects, or vice versa.</p>
-<table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>selection</td>
-<td>If true, the element and group selection will be saved</td>
-<td><code>{selection: true}</code></td>
-</tr>
-<tr>
-<td>elements</td>
-<td>Array of all elements (cubes and locators) to save.</td>
-<td><code>{elements: [cube1, cube2, locator]}</code></td>
-</tr>
-<tr>
-<td>outliner</td>
-<td>If true, the complete outliner structure will be saved. This includes group data like names etc.</td>
-<td><code>{outliner: true}</code></td>
-</tr>
-<tr>
-<td>group</td>
-<td>A single group.</td>
-<td><code>{group: Group.selected}</code></td>
-</tr>
-<tr>
-<td>textures</td>
-<td>An array of textures.</td>
-<td><code>{textures: [texture]}</code></td>
-</tr>
-<tr>
-<td>bitmap</td>
-<td>If true, the content of the listed textures will be saved.</td>
-<td><code>{textures: [texture], bitmap: true}</code></td>
-</tr>
-<tr>
-<td>uv_mode</td>
-<td>When true, saves the current UV mode and project resolution settings.</td>
-<td><code>{uv_mode: true}</code></td>
-</tr>
-<tr>
-<td>animations</td>
-<td>Array of animations</td>
-<td><code>{animations: [Animator.selected]}</code></td>
-</tr>
-<tr>
-<td>keyframes</td>
-<td>Array of animation keyframes</td>
-<td><code>{keyframes: [keyframe]}</code></td>
-</tr>
-<tr>
-<td>display_slots</td>
-<td>Array of display slot ids</td>
-<td><code>{display_slots: ['thirdperson_righthand', 'head']}</code></td>
-</tr>
-<tr>
-<td>uv_only</td>
-<td>If true, only UV and face information of cubes will be saved.</td>
-<td><code>{elements. Cube.selected, uv_only: true}</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="example">Example</h2>
-<pre><code class="javascript">Undo.initEdit({elements: []});
-
-var new_cube = new Cube({name: 'kevin'}).init();
-var other_cube = new Cube({name: 'lars'}).init();
-
-Undo.finishEdit('add new cubes', {elements: [new_cube, other_cube]});
-</code></pre>
+<h4 id="modeselect"><code>Mode#select()</code></h4>
+<p>Selects this mode.</p>
+<h4 id="modeselected"><code>Mode#selected</code></h4>
+<p>Boolean. Returns whether this mode is selected.</p>
+<h4 id="modesvueforceupdate"><code>Modes.vue.$forceUpdate()</code></h4>
+<p>Forces the mode tab menu to update. This may be necessary after adding new modes or changing certain properties.</p>
               
             </div>
           </div>
@@ -258,10 +187,10 @@ Undo.finishEdit('add new cubes', {elements: [new_cube, other_cube]});
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../modes/" class="btn btn-neutral float-right" title="Modes">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../outliner/" class="btn btn-neutral float-right" title="Outliner">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../actions/" class="btn btn-neutral" title="Actions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../undo/" class="btn btn-neutral" title="Undo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -287,10 +216,10 @@ Undo.finishEdit('add new cubes', {elements: [new_cube, other_cube]});
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../actions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../undo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../modes/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../outliner/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

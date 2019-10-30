@@ -50,7 +50,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="..">Home</a>
+    <a class="" href="..">Getting Started</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -70,7 +70,55 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../formats/">Formats</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../actions/">Actions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../modes/">Modes</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Outliner</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#outliner">Outliner</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#outliner-management">Outliner management</a></li>
+        
+            <li><a class="toctree-l3" href="#group">Group</a></li>
+        
+            <li><a class="toctree-l3" href="#cube">Cube</a></li>
+        
+            <li><a class="toctree-l3" href="#locator">Locator</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../textures/">Textures</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preview/">Preview</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -80,12 +128,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../formats/">Formats</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../textures/">Textures</a>
+    <a class="" href="../theme/">Theme</a>
 	    </li>
           
         </ul>
@@ -207,7 +250,7 @@
 * <code>origin</code> Array of the new 3D origin</p>
 <h4 id="groupsortcontent">Group.sortContent()</h4>
 <p>Sort the content of the group alphabetically. This will automatically create an undo point.</p>
-<h4 id="groupdiplicate">Group.diplicate()</h4>
+<h4 id="groupduplicate">Group.duplicate()</h4>
 <p>Duplicate the group</p>
 <h4 id="groupgetsavecopy">Group.getSaveCopy()</h4>
 <p>Returns a copy of the group that can be used to save the group to a JSON file.</p>
@@ -224,11 +267,58 @@
 <h2 id="cube">Cube</h2>
 <p>Cubes represent regular cubes in the outliner. Cubes inherit all properties and methods from OutlinerElement and NonGroup.</p>
 <h3 id="new-cube-data-init">new Cube( data ).init()</h3>
+<p>Creates a new cube and initializes it.</p>
+<ul>
+<li><code>name: String</code> </li>
+<li><code>from: Array</code> First corner of the cube, relative to cube space</li>
+<li><code>to: Array</code> Second corner of the cube</li>
+<li><code>origin: Array</code> Cube pivot point</li>
+<li><code>rotation: Array</code> Cube rotation</li>
+<li><code>inflate: Number</code> Inflate value</li>
+<li><code>uv_offset: Array[2]</code> Box UV offset coordinates</li>
+<li><code>visibility: Boolean</code> </li>
+<li><code>autouv: Number</code> Auto UV setting. Can be 0, 1 or 2.</li>
+<li><code>export: Boolean</code> Whether to include the cube in exported files.</li>
+<li><code>mirror_uv: Boolean</code> Mirrors the UV on the X axis if using box UV</li>
+<li><code>shade: Boolean</code> </li>
+<li>
+<p><code>color: Number</code> Base cube color as shown when untextured or in the outliner. Number between 0 and 7 mapping to the 8 colors.</p>
+<ul>
+<li><code>0.</code> Light Blue</li>
+<li><code>1.</code> Yellow</li>
+<li><code>2.</code> Orange</li>
+<li><code>4.</code> Red</li>
+<li><code>4.</code> Purple</li>
+<li><code>5.</code> Blue</li>
+<li><code>6.</code> Green</li>
+<li><code>7.</code> Lime</li>
+</ul>
+</li>
+<li>
+<p><code>parent: String</code> </p>
+</li>
+<li><code>faces: Object</code> </li>
+</ul>
+<h4 id="cubeextend-data-object">cube.extend( data: Object )</h4>
+<p>Copies properties from data to the cube.</p>
+<h4 id="cubesize-axis-number-floored-boolean">cube.size( axis: Number, floored: Boolean )</h4>
+<p>Returns the size of the cube on a specific axis or as an array.
+* <code>floored</code> If true, the size will be floored to get the assumed size to calculate box UV.</p>
+<h4 id="_1"></h4>
 <h2 id="locator">Locator</h2>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../textures/" class="btn btn-neutral float-right" title="Textures">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../modes/" class="btn btn-neutral" title="Modes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -252,6 +342,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../modes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../textures/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

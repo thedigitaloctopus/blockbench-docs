@@ -50,7 +50,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="..">Home</a>
+    <a class="" href="..">Getting Started</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -70,17 +70,27 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../formats/">Formats</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../actions/">Actions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../undo/">Undo</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../utility/">Utility</a>
+    <a class="" href="../modes/">Modes</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../formats/">Formats</a>
+    <a class="" href="../outliner/">Outliner</a>
 	    </li>
           
             <li class="toctree-l1 current">
@@ -98,12 +108,33 @@
         
             <li><a class="toctree-l3" href="#updating-textures">Updating textures</a></li>
         
+            <li><a class="toctree-l3" href="#handling-textures">Handling textures</a></li>
+        
             <li><a class="toctree-l3" href="#texture-menu">Texture Menu</a></li>
+        
+            <li><a class="toctree-l3" href="#editing-textures">Editing Textures</a></li>
+        
+            <li><a class="toctree-l3" href="#textureanimator">TextureAnimator</a></li>
         
         </ul>
     
 
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preview/">Preview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../utility/">Utility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../theme/">Theme</a>
 	    </li>
           
         </ul>
@@ -173,48 +204,49 @@
 <p>THREE.JS materials are saved in a separate location to increase performance. You can get the material using the texture's uuid.</p>
 <h4 id="texturegeterrormessage">texture.getErrorMessage()</h4>
 <p>Returns the translated error message of the texture.</p>
-<h4 id="textureextend-data">texture.extend( data )</h4>
+<h4 id="textureextend-data-object">texture.extend( data: Object )</h4>
 <p>Copy properties from <code>data</code> into the texture.</p>
-<h4 id="load-callback">load( callback )</h4>
+<h4 id="load-callback-function">load( callback: Function )</h4>
 <p>Loads the texture by updating its source.</p>
 <ul>
 <li><code>callback</code> function to call after the update is finished. The update is asynchronous.</li>
 </ul>
 <h2 id="loading-textures">Loading Textures</h2>
-<h4 id="texturefromjavalink-link-path_array">texture.fromJavaLink( link, path_array )</h4>
+<h4 id="texturefromjavalink-link-string-path_array-array">texture.fromJavaLink( link: String, path_array: Array )</h4>
 <p>Tries to load the texture from a java edition resource pack using the relative path provided in the model file and the absolute path of the model.</p>
-<h4 id="texturefromfile-file">texture.fromFile( file )</h4>
+<h4 id="texturefromfile-file-string">texture.fromFile( file: String )</h4>
 <p>Loads the texture from a file object, as used in Blockbench.import.</p>
-<h4 id="texturefrompath-path">texture.fromPath( path )</h4>
+<h4 id="texturefrompath-path-string">texture.fromPath( path: String )</h4>
 <p>Loads the texture from an absolute path.</p>
-<h4 id="texturefromdataurl-data_url">texture.fromDataURL( data_url )</h4>
+<h4 id="texturefromdataurl-data_url-string">texture.fromDataURL( data_url: String )</h4>
 <p>Loads the texture from a data URL (base64 encoded image)</p>
 <h4 id="texturefromdefaultpack">texture.fromDefaultPack()</h4>
 <p>Attempts to load the texture from the default resource pack if defined in the Blockbench settings.</p>
-<h4 id="textureloademptyerror_id">texture.loadEmpty(error_id)</h4>
+<h4 id="textureloadempty-error_id-number">texture.loadEmpty( error_id: Number )</h4>
 <p>Loads the texture with an empty (error) texture and sets the error code to <code>error_id</code>.</p>
-<h4 id="textureadd-undo">texture.add( undo )</h4>
+<h4 id="textureadd-undo-boolean">texture.add( undo: Boolean )</h4>
 <p>Adds the texture to Blockbench and takes care of applying the texture to all cubes if required by the format.</p>
 <ul>
 <li><code>undo</code> Whether to create an undo point for adding the texture.</li>
 </ul>
-<h4 id="texturegeneratefolder-path">texture.generateFolder( path )</h4>
+<h4 id="texturegeneratefolder-path-string">texture.generateFolder( path: String )</h4>
 <p>Generate the java edition texture folder from a given path.</p>
 <h2 id="updating-textures">Updating textures</h2>
-<h4 id="textureupdatesource-data_url">texture.updateSource( data_url )</h4>
+<h4 id="textureupdatesource-data_url-string">texture.updateSource( data_url: String )</h4>
 <p>Updates the source of the texture. This is used if the texture gets edited. Also updates the material and UV Editor view of the texture</p>
 <h4 id="textureupdatematerial">texture.updateMaterial()</h4>
 <p>Only update the THREE.JS material of the texture.</p>
-<h4 id="texturereopen-force">texture.reopen( force )</h4>
+<h4 id="texturereopen-force-boolean">texture.reopen( force: Boolean )</h4>
 <p>Opens a file dialog to replace the texture source with another file.</p>
 <ul>
 <li><code>force</code> If true, Blockbench won't show a warning message if the texture has unsaved changes.</li>
 </ul>
 <h4 id="texturereloadtexture">texture.reloadTexture()</h4>
 <p>Reloads the texture to update changes to the file. This is usually not necessary as the texture updates automatically when there are any changes.</p>
-<h4 id="textureselect-event">texture.select( event )</h4>
+<h2 id="handling-textures">Handling textures</h2>
+<h4 id="textureselect-event-event">texture.select( event: Event )</h4>
 <p>Select this texture.</p>
-<h4 id="textureremove-no_update">texture.remove( no_update )</h4>
+<h4 id="textureremove-no_update-boolean">texture.remove( no_update: Boolean )</h4>
 <p>Removes the texture.</p>
 <ul>
 <li><code>no_update</code> If true, don't update the interface and don't create an undo point </li>
@@ -223,11 +255,13 @@
 <p>Marks this texture as particle texture for java edition models.</p>
 <h4 id="fillparticle">fillParticle()</h4>
 <p>Marks this texture as particle texture for java edition models, unless there is already a particle texture.</p>
-<h4 id="apply-all">apply( all )</h4>
+<h4 id="apply-all-boolean">apply( all: Boolean )</h4>
 <p>Applies the texture to all selected cubes. Creates an undo point.</p>
 <ul>
 <li><code>all</code> When true, apply the texture to all faces</li>
 </ul>
+<h4 id="texturejavatexturelink">texture.javaTextureLink()</h4>
+<p>Returns the link of the texture as used in java edition block/item models.</p>
 <h2 id="texture-menu">Texture Menu</h2>
 <h4 id="textureopenfolder">texture.openFolder()</h4>
 <p>Show the source file of the texture in a new Explorer/Finder window.</p>
@@ -236,6 +270,27 @@
 <h4 id="textureshowcontextmenu-event">texture.showContextMenu( event )</h4>
 <p>Show the context menu of the texture using the position of the event.</p>
 <h4 id="textureopenmenu">texture.openMenu()</h4>
+<p>Opens the texture menu dialog.</p>
+<h2 id="editing-textures">Editing Textures</h2>
+<h4 id="textureedit-callback-function-options-object">texture.edit( callback: Function, options: Object )</h4>
+<p>Edits the texture using the callback function.
+* <code>callback</code> Function to edit the texture. If omitted, the texture will be converted to an editable texture but won't be edited.</p>
+<h4 id="texturesave-as-boolean">texture.save( as: Boolean )</h4>
+<p>Saves changes to the texture.
+* <code>as</code> If true, a file dialog will be opened even if the location of the file is known.</p>
+<h4 id="texturegetbase64">texture.getBase64()</h4>
+<p>Returns the base64 string of the texture.</p>
+<h2 id="textureanimator">TextureAnimator</h2>
+<p>Tool to control animated textures.</p>
+<h4 id="textureanimatorstart">TextureAnimator.start()</h4>
+<h4 id="textureanimatorstop">TextureAnimator.stop()</h4>
+<h4 id="textureanimatortoggle">TextureAnimator.toggle()</h4>
+<h4 id="textureanimatorupdatespeed">TextureAnimator.updateSpeed()</h4>
+<p>Updates the playback speed of animated textures.</p>
+<h4 id="textureanimatorreset">TextureAnimator.reset()</h4>
+<p>Sets all animated textures back to frame 0 and stops playing.</p>
+<h4 id="textureanimatorupdatebutton">TextureAnimator.updateButton()</h4>
+<p>Updates whether the animation button displays a play or pause icon.</p>
               
             </div>
           </div>
@@ -243,8 +298,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../preview/" class="btn btn-neutral float-right" title="Preview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../formats/" class="btn btn-neutral" title="Formats"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../outliner/" class="btn btn-neutral" title="Outliner"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -270,8 +327,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../formats/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../outliner/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../preview/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

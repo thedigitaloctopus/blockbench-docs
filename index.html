@@ -8,7 +8,7 @@
   <meta name="description" content="None">
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Home - Blockbench</title>
+  <title>Getting Started - Blockbench</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Home";
+    var mkdocs_page_name = "Getting Started";
     var mkdocs_page_input_path = "index.md";
     var mkdocs_page_url = null;
   </script>
@@ -50,10 +50,16 @@
           
             <li class="toctree-l1 current">
 		
-    <a class="current" href=".">Home</a>
+    <a class="current" href=".">Getting Started</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#blockbench-documentation">Blockbench documentation</a></li>
+    <li class="toctree-l2"><a href="#creating-a-plugin">Creating a Plugin</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#first-steps">First Steps</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -76,7 +82,37 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="formats/">Formats</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="actions/">Actions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="modes/">Modes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="outliner/">Outliner</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="textures/">Textures</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="preview/">Preview</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -86,12 +122,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="formats/">Formats</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="textures/">Textures</a>
+    <a class="" href="theme/">Theme</a>
 	    </li>
           
         </ul>
@@ -116,7 +147,7 @@
     
       
     
-    <li>Home</li>
+    <li>Getting Started</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -126,8 +157,61 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="blockbench-documentation">Blockbench documentation</h1>
-<p>Download Blockbench on <a href="https://blockbench.net">blockbench.net</a>.</p>
+                <h1 id="creating-a-plugin">Creating a Plugin</h1>
+<p>Download Blockbench on <a href="https://blockbench.net">blockbench.net</a></p>
+<p>Welcome to the official Blockbench documentation. If you want to create a custom plugin, this is the place to start.</p>
+<h2 id="first-steps">First Steps</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>To create a Blockbench plugin, you need basic knowledge of Javascript and Git, a working text editor like Sublime Text or VSCode and of course Blockbench</p>
+<h3 id="creating-the-plugin">Creating the plugin</h3>
+<p>In this example we are going to create a small silly plugin that will randomize the height of all selected cubes.</p>
+<p>First, create a new file named <code>height_randomizer.js</code>. Open the file and create a self-invoking function to create a scope for global variables. Inside the function, create the variable <code>button</code>.</p>
+<pre><code class="javascript">(function() {
+    var button;
+})();
+</code></pre>
+
+<p>Now we need to register the plugin. This process will give Blockbench all the required information to handle the plugin.
+In case the user is offline or loads the plugin from the computer, this will also provide the plugin metadata such as name and author for the plugin store.</p>
+<p>Write this code inside the function right after the button variable.</p>
+<pre><code class="javascript">Plugin.register('height_randomizer', {
+    name: 'Height Randomizer',
+    author: 'Yourname',
+    description: 'This plugin can randomize the height of all selected cubes',
+    icon: 'bar_chart',
+    version: '0.0.1',
+    variant: 'both'
+});
+</code></pre>
+
+<p>The variant tells Blockbench where the plugin can be used. In this case it can be used in both the web app and the desktop app. The icon uses a material icon string. You can learn more about icons here: <a href="blockbench/#icons">Blockbench#icons</a></p>
+<h3 id="result">Result</h3>
+<p>If you have followed the steps above, you should end up with something like this:</p>
+<pre><code class="javascript">(function() {
+    var button;
+
+    Plugin.register('height_randomizer', {
+        name: 'Height Randomizer',
+        author: 'Yourname',
+        description: 'This plugin can randomize the height of all selected cubes',
+        icon: 'bar_chart',
+        version: '0.0.1',
+        variant: 'both',
+        onload() {
+            button = new Action('randomize_height', {
+                name: 'Randomize Height',
+                description: 'Randomize the height of all selected elements',
+                icon: 'bar_chart'
+            });
+            MenuBar.addAction(button, 'filter');
+        },
+        onunload() {
+            button.delete();
+        }
+    });
+
+})();
+</code></pre>
               
             </div>
           </div>
@@ -176,5 +260,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-09-09 15:18:59
+Build Date UTC : 2019-10-30 17:11:47
 -->
