@@ -1,0 +1,20 @@
+{
+  "name": "blockbench-docs",
+  "version": "1.0.0",
+  "description": "Blockbench Documentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "mkdocs serve",
+    "deploy": "mkdocs gh-deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JannisX11/blockbench-docs.git"
+  },
+  "author": "JannisX11",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JannisX11/blockbench-docs/issues"
+  },
+  "homepage": "https://github.com/JannisX11/blockbench-docs#readme"
+}
