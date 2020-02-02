@@ -1,11 +1,16 @@
 site_name: Blockbench
 theme: readthedocs
 nav:
-  - Home: index.md
+  - Getting Started: index.md
   - Plugin: plugin.md
   - Blockbench: blockbench.md
   - Interface: ui.md
-  - Undo: undo.md
-  - Utility: utility.md
   - Formats: formats.md
+  - Actions: actions.md
+  - Undo: undo.md
+  - Modes: modes.md
+  - Outliner: outliner.md
   - Textures: textures.md
+  - Preview: preview.md
+  - Utility: utility.md
+  - Theme: theme.md

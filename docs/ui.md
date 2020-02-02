@@ -17,14 +17,15 @@ Creates a new dialog.
 		* Form part (Object)
 			* `type` (`input/textarea/select/number/color/checkbox`) Type of the input
 			* `label` Label of the input
+			* `nocolon` Whether to skip the automatic colon added to the label
 			* `readonly` When true, makes the input read-only
 			* `value` Default value
 			* `placeholder` Text to show when the input is empty
 			* `text` Text when using the text type. Supports markdown-style links.
 			* `colorpicker` When using the type: `color`, the colorpicker action to use. (optional)
 			* `min`/`max`/`step` Mimimum, Maximum and Step attributes for the number input
-			* `nocolon` Whether to skip the automatic colon added to the label
 			* `height` Height for textarea inputs
+			* `options: Object` Options (`key: "displaytext"`) for select inputs
 	* `confirmEnabled` If false, the confirm button of the dialog is disabled
 	* `cancelEnabled` If false, the cancel button of the dialog is disabled
 	* `onConfirm` Function to execute when the user confirms the dialog

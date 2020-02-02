@@ -134,7 +134,7 @@ Move the origin of a bone to a specific location without visually affecting the 
 
 Sort the content of the group alphabetically. This will automatically create an undo point.
 
-#### Group.diplicate()
+#### Group.duplicate()
 
 Duplicate the group
 
@@ -164,6 +164,43 @@ Run a funtion for each child of the group recursively.
 Cubes represent regular cubes in the outliner. Cubes inherit all properties and methods from OutlinerElement and NonGroup.
 
 ### new Cube( data ).init()
+
+Creates a new cube and initializes it.
+
+* `name: String` 
+* `from: Array` First corner of the cube, relative to cube space
+* `to: Array` Second corner of the cube
+* `origin: Array` Cube pivot point
+* `rotation: Array` Cube rotation
+* `inflate: Number` Inflate value
+* `uv_offset: Array[2]` Box UV offset coordinates
+* `visibility: Boolean` 
+* `autouv: Number` Auto UV setting. Can be 0, 1 or 2.
+* `export: Boolean` Whether to include the cube in exported files.
+* `mirror_uv: Boolean` Mirrors the UV on the X axis if using box UV
+* `shade: Boolean` 
+* `color: Number` Base cube color as shown when untextured or in the outliner. Number between 0 and 7 mapping to the 8 colors.
+	* `0.` Light Blue
+	* `1.` Yellow
+	* `2.` Orange
+	* `4.` Red
+	* `4.` Purple
+	* `5.` Blue
+	* `6.` Green
+	* `7.` Lime
+
+* `parent: String` 
+* `faces: Object` 
+
+#### cube.extend( data: Object )
+Copies properties from data to the cube.
+
+#### cube.size( axis: Number, floored: Boolean )
+Returns the size of the cube on a specific axis or as an array.
+* `floored` If true, the size will be floored to get the assumed size to calculate box UV.
+
+####  
+
 
 
 ## Locator

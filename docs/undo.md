@@ -34,3 +34,14 @@ Aspects are used to tell Blockbench which parts of the model to save in an undo 
 |keyframes	|Array of animation keyframes 								|`{keyframes: [keyframe]}`
 |display_slots	|Array of display slot ids 								|`{display_slots: ['thirdperson_righthand', 'head']}`
 |uv_only	|If true, only UV and face information of cubes will be saved. 	|`{elements. Cube.selected, uv_only: true}`
+
+## Example
+
+```javascript
+Undo.initEdit({elements: []});
+
+var new_cube = new Cube({name: 'kevin'}).init();
+var other_cube = new Cube({name: 'lars'}).init();
+
+Undo.finishEdit('add new cubes', {elements: [new_cube, other_cube]});
+```
