@@ -4,7 +4,7 @@
   "description": "Blockbench Documentation",
   "main": "index.js",
   "scripts": {
-    "test": "mkdocs serve",
+    "test": "eplorer \"http://127.0.0.1:8000\" && mkdocs serve",
     "deploy": "mkdocs gh-deploy"
   },
   "repository": {

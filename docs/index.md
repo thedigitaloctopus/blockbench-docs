@@ -57,7 +57,14 @@ If you have followed the steps above, you should end up with something like this
 			button = new Action('randomize_height', {
 				name: 'Randomize Height',
 				description: 'Randomize the height of all selected elements',
-				icon: 'bar_chart'
+				icon: 'bar_chart',
+				click: function() {
+					Undo.initEdit({elements: Cube.selected});
+					Cube.selected.forEach(cube => {
+						cube.to[1] = cube.from[0] + Math.floor(Math.random()*8);
+					});
+					Undo.finishEdit('randomize cube height');
+				}
 			});
 			MenuBar.addAction(button, 'filter');
 		},

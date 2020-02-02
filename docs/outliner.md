@@ -12,56 +12,56 @@ Parent of all groups and elements in the outliner. All properties and methods ca
 * `selected` Array (or single object in case of group) or the selected elements of this type
 * `all` Array of all groups or elements of this type
 
-#### OutlinerElement.init()
+#### OutlinerElement#init()
 
 Initializes the element so it can be used in the outliner.
 
-#### OutlinerElement.addTo( destination )
+#### OutlinerElement#addTo( destination )
 
 Adds the element to a specific place in the outliner.
 * `destination` Can be a group, element or undefined for the outliner root.
 
-#### OutlinerElement.sortInBefore( destination, index_mod )
+#### OutlinerElement#sortInBefore( destination, index_mod )
 
 Sorts the element in before another element.
 * `destination` Reference group or element
 * `index_mod` Modifier for the index. If 1, the element will be placed after (below) the destination.
 
-#### OutlinerElement.getParentArray()
+#### OutlinerElement#getParentArray()
 
 Returns the children array of the parent that the group or element is in.
 
-#### OutlinerElement.showInOutliner()
+#### OutlinerElement#showInOutliner()
 
 Unfolds the outliner and scrolls up or down if necessary to show the group or element.
 
-#### OutlinerElement.updateElement()
+#### OutlinerElement#updateElement()
 
-Updates the Vue node of the element.
+Updates the Vue node of the element. This is only necessary in some rare situations
 
-#### OutlinerElement.remove()
+#### OutlinerElement#remove()
 
 Removes the element.
 
-#### OutlinerElement.rename()
+#### OutlinerElement#rename()
 
 Marks the name of the group or element in the outliner for renaming.
 
-#### OutlinerElement.saveName()
+#### OutlinerElement#saveName()
 
 Saves the changed name of the element by creating an undo point and making the name unique if necessary.
 
-#### OutlinerElement.createUniqueName()
+#### OutlinerElement#createUniqueName()
 
 Create a unique name for the group or element by adding a number at the end or increasing it.
 
-#### OutlinerElement.isChildOf( group, max_levels )
+#### OutlinerElement#isChildOf( group, max_levels )
 
 Checks of the group or element is a child of `group`.
 * `group` A group
 * `max_levels` The maximum number of generations that can be between the element and `group`.
 
-#### OutlinerElement.showContextMenu( event )
+#### OutlinerElement#showContextMenu( event )
 
 Displays the context menu of the element
 * `event`. Mouse event, determines where the context menu spawns.
@@ -90,68 +90,68 @@ Displays the context menu of the element
 
 Static variable to get the currently selected groups. Note that children groups of this group can also have `selected` to make them appear selected in the outliner, but will not be treated as the primary selected group
 
-#### Group.extend( data )
+#### Group#extend( data )
 
 Modify data of the group.
 * `data` Object of properties to apply to the group
 
-#### Group.selectChildren( event )
+#### Group#selectChildren( event )
 
 Select the children of the group
 
-#### Group.selectLow( highlight )
+#### Group#selectLow( highlight )
 
 Select the group and its children without marking it the selected group.
-* `highlight` Whether to highlight the group in the selection color in the outliner. Default is true.
+* `highlight: Boolean` Whether to highlight the group in the selection color in the outliner. Default is true.
 
-#### Group.unselect()
+#### Group#unselect()
 
 Unselects the group
 
-#### Group.matchesSelection()
+#### Group#matchesSelection()
 
 Returns true if the content of the group matches the current selection.
 
-#### Group.openUp()
+#### Group#openUp()
 
 Opens the group and all of its ancestor groups.
 
-#### Group.remove( undo )
+#### Group#remove( undo )
 
 Removes the group
 * `undo` If true, an undo point will be created.
 
-#### Group.resolve()
+#### Group#resolve()
 
 Remove the group and leave all of its children in the parent array.
 
-#### Group.transferOrigin( origin )
+#### Group#transferOrigin( origin )
 
 Move the origin of a bone to a specific location without visually affecting the position of it's content.
-* `origin` Array of the new 3D origin
+* `origin: Array` Position of the new 3D origin
 
-#### Group.sortContent()
+#### Group#sortContent()
 
 Sort the content of the group alphabetically. This will automatically create an undo point.
 
-#### Group.duplicate()
+#### Group#duplicate()
 
 Duplicate the group
 
-#### Group.getSaveCopy()
+#### Group#getSaveCopy()
 
 Returns a copy of the group that can be used to save the group to a JSON file.
 
-#### Group.getChildlessCopy()
+#### Group#getChildlessCopy()
 
 Returns a copy of the group without the children. Internally used by the duplicate function.
 
-#### Group.compile( undo )
+#### Group#compile( undo )
 
 Generates a copy of the group that can be used for undo points or to save in block model files.
 * `undo` Make the copy work for undo points.
 
-#### Group.forEachChild( callback, type, for_self )
+#### Group#forEachChild( callback, type, for_self )
 
 Run a funtion for each child of the group recursively.
 * `callback` Function to run for each child. First argument is the child.
@@ -192,15 +192,119 @@ Creates a new cube and initializes it.
 * `parent: String` 
 * `faces: Object` 
 
-#### cube.extend( data: Object )
+#### Cube#extend( data: Object )
 Copies properties from data to the cube.
 
-#### cube.size( axis: Number, floored: Boolean )
+#### Cube#size( axis: Number, floored: Boolean )
 Returns the size of the cube on a specific axis or as an array.
-* `floored` If true, the size will be floored to get the assumed size to calculate box UV.
 
-####  
+* `floored: Boolean` If true, the size will be floored to get the assumed size to calculate box UV.
+
+#### Cube#rotationAxis()
+Returns the first axis that the cube is rotated around. Useful if the format only supports one axis of rotation.
+
+#### Cube#getMesh()
+Returns the ThreeJS mesh instance of the cube.
+
+#### Cube#remove()
+Removes the cube.
+
+#### Cube#getUndoCopy( aspects )
+Returns a copy of the cube like it is used in Undo saves.
+
+#### Cube#getUndoCopy( aspects )
+Returns a copy of the cube like it is used in .bbmodel files.
+
+#### Cube#roll( axis, steps, origin)
+Rolls the Cube around an axis by steps of 90 degrees.
+
+* `axis: Integer` Rotation axis
+* `steps: Integer` Rotation steps. Each step is +90 degrees.
+* `origin: Array` Origin for the rotation. Defaults to the cube's origin.
+
+#### Cube#flip( axis, center, skipUV )
+Flips the cube.
+
+* `axis: Integer` Flip axis
+* `center: Float` Coordinate of the flipping center
+* `skipUV: Boolean` If true, the UV mapping of the cube won't be flipped.
+
+#### Cube#transferOrigin( origin )
+
+Move the origin of a bone to a specific location without visually affecting the position of it's content.
+
+* `origin: Array` Position of the new 3D origin
+
+#### Cube#getWorldCenter()
+Returns the actual center of the cube in world space. Returns a ThreeJS Vector3.
+
+#### Cube#setColor( index )
+Assigns a marker color to the cube, out of 8 possible colors.
+
+* `index: Integer` Index of default marker colors (ight_blue, yellow, orange, red, purple, blue, green, lime)
+
+#### Cube#applyTexture( texture, faces )
+Applies a texture to the cube.
+
+* `texture: Texture`
+* `faces: Array|Boolean` Faces to assign the texture to. If true, the texture is applied to all 6 faces. If omitted, the texture is applied to the currently selected face.
+
+#### Cube#mapAutoUV()
+Automatically map the UV of the cube depending on its current auto UV mode.
+
+#### Cube#move( value, axis, move_origin )
+Moves the cube by an amount on the specified axis.
+
+* `value: Float` Distance to move the cube
+* `axis: Integer` Axis to move the cube on
+* `move_origin: Boolean` Whether to move the origin along with the element
+
+#### Cube#moveVector( value, axis )
+Move the cube by a specific vector in the cube's local space.
+
+* `value: Vector3|Float` Movement distance
+* `axis: Integer` If `value` is specified as a number, this is the movement axis.
+
+#### Cube#resize( value, axis, negative, allow_negative )
+Resizes the cube by a specified amount
+
+* `value: Float` Resize value
+* `axis: Integer` Resize axis
+* `negative: Boolean` If true, the object is resized in the negative direction on the specified axis.
+* `allow_negative: Boolean` If true, the function will allow negative cube sizes.
 
 
 
 ## Locator
+
+### new Cube( data ).init()
+
+Creates a new locator and initializes it.
+
+* `name: String` 
+* `from: Array` Position of the locator in local space
+* `export: Boolean` Whether to include the locator in exported files.
+
+#### Cube#extend( data: Object )
+Copies properties from data to the locator.
+
+#### Locator#getUndoCopy( aspects )
+Returns a copy of the locator like it is used in Undo saves.
+
+#### Locator#getUndoCopy( aspects )
+Returns a copy of the locator like it is used in .bbmodel files.
+
+#### Locator#flip( axis, center)
+Flips the locator.
+
+* `axis: Integer` Flip axis
+* `center: Float` Coordinate of the flipping center
+
+#### Locator.getWorldCenter()
+Returns the position of the locator in world space as a ThreeJS Vector3.
+
+#### Locator.move( value, axis )
+Moves the locator by a specified amounted axis.
+
+* `value: Float` Movement distance
+* `axis: Integer` Movement axis

@@ -2,7 +2,9 @@
 
 ## Creating a plugin
 
-Plugins consist of a Javascript file. To create a plugin, create a new Javascript file named `[plugin-id].js`. Inside this file, use the method Plugin.register to initialize the plugin, as seen in the example. Note that the plugin ID should be the same as the file name minus extension.
+Plugins consist of a Javascript file. To create a plugin, create a new Javascript file named `[plugin-id].js`. Inside this file, use the method Plugin.register to initialize the plugin, as seen in the example.
+
+> **_NOTE:_**  the plugin ID must be the same as the file name minus extension.
 ```javascript
 Plugin.register('plugin_id', {
 	title: 'Plugin Name',
