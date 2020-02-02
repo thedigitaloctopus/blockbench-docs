@@ -161,7 +161,10 @@
               
                 <h1 id="plugin">Plugin</h1>
 <h2 id="creating-a-plugin">Creating a plugin</h2>
-<p>Plugins consist of a Javascript file. To create a plugin, create a new Javascript file named <code>[plugin-id].js</code>. Inside this file, use the method Plugin.register to initialize the plugin, as seen in the example. Note that the plugin ID should be the same as the file name minus extension.</p>
+<p>Plugins consist of a Javascript file. To create a plugin, create a new Javascript file named <code>[plugin-id].js</code>. Inside this file, use the method Plugin.register to initialize the plugin, as seen in the example.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong>  the plugin ID must be the same as the file name minus extension.</p>
+</blockquote>
 <pre><code class="javascript">Plugin.register('plugin_id', {
     title: 'Plugin Name',
     author: 'Your Name',

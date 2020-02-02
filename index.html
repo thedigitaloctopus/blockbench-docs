@@ -201,7 +201,14 @@ In case the user is offline or loads the plugin from the computer, this will als
             button = new Action('randomize_height', {
                 name: 'Randomize Height',
                 description: 'Randomize the height of all selected elements',
-                icon: 'bar_chart'
+                icon: 'bar_chart',
+                click: function() {
+                    Undo.initEdit({elements: Cube.selected});
+                    Cube.selected.forEach(cube =&gt; {
+                        cube.to[1] = cube.from[0] + Math.floor(Math.random()*8);
+                    });
+                    Undo.finishEdit('randomize cube height');
+                }
             });
             MenuBar.addAction(button, 'filter');
         },
@@ -260,5 +267,5 @@ In case the user is offline or loads the plugin from the computer, this will als
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-10-30 17:11:47
+Build Date UTC : 2020-02-02 22:18:41
 -->

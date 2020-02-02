@@ -107,7 +107,7 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#screenshots">Screenshots</a></li>
+            <li><a class="toctree-l3" href="#new-preview-data">new Preview( data )</a></li>
         
         </ul>
     
@@ -158,7 +158,89 @@
             <div class="section">
               
                 <h1 id="preview">Preview</h1>
-<h2 id="screenshots">Screenshots</h2>
+<h3 id="new-preview-data">new Preview( data )</h3>
+<p>Creates a new 3D viewport</p>
+<ul>
+<li><code>data</code> Object<ul>
+<li><code>id</code> Preview ID</li>
+</ul>
+</li>
+</ul>
+<h4 id="previewcanvas">Preview#canvas</h4>
+<p>HTML canvas element of the preview</p>
+<h4 id="previewisortho">Preview#isOrtho</h4>
+<p>Boolean. Whether the preview is in orthographic mode</p>
+<h4 id="previewcamera">Preview#camera</h4>
+<p>Currently active camera of the preview</p>
+<h4 id="previewcampers">Preview#camPers</h4>
+<p>Perspective Camera</p>
+<h4 id="previewcamortho">Preview#camOrtho</h4>
+<p>OrthographicCamera</p>
+<h4 id="previewcontrols">Preview#controls</h4>
+<p>Orbit controls</p>
+<h4 id="previewaddannotation-key-node">Preview#addAnnotation( key, node )</h4>
+<p>Adds an annotation to the preview</p>
+<ul>
+<li><code>key: String</code> Identifier key for the annotation</li>
+<li><code>node: HTML Node</code> Element to use as the annotation</li>
+</ul>
+<h4 id="previewremoveannotation-key">Preview#removeAnnotation( key )</h4>
+<p>Remove an annotation</p>
+<ul>
+<li><code>key: String</code> Identifier key of the annotation</li>
+</ul>
+<h4 id="previewremoveannotation-key_1">Preview#removeAnnotation( key )</h4>
+<p>Remove an annotation</p>
+<ul>
+<li><code>key: String</code> Identifier key of the annotation</li>
+</ul>
+<h4 id="previewresize">Preview#resize()</h4>
+<p>Update the size of the preview</p>
+<h4 id="previewraycast-event">Preview#raycast( event )</h4>
+<p>Raycast into the 3D preview at the current event location</p>
+<ul>
+<li><code>event: Event</code></li>
+<li><code>Returns: Boolean|Object</code> false if nothing is found, otherwise an object containing the information<ul>
+<li><code>event: Event</code></li>
+<li><code>type: String</code> Type of object that was found</li>
+<li><code>intersects: Array</code> List of all possible intersections</li>
+<li><code>cube: Cube</code> Object that was clicked on</li>
+<li><code>face: String</code> Face of the cube</li>
+<li><code>vertex: Object</code> Vertex if a vertex was found</li>
+</ul>
+</li>
+</ul>
+<h4 id="previewsetnormalcamera">Preview#setNormalCamera()</h4>
+<p>Sets the preview to the normal perspective camera</p>
+<h4 id="previewsetorthographiccamera-angle">Preview#setOrthographicCamera( angle )</h4>
+<p>Switches to the orthographic camera from a specific angle</p>
+<ul>
+<li><code>angle: Integer</code> Camera angle</li>
+</ul>
+<h4 id="previewresetcamera">Preview#resetCamera()</h4>
+<p>Sets the camera to perspective and goes to the default angle.</p>
+<h4 id="previewgetfacingdirection">Preview#getFacingDirection()</h4>
+<p>Returns the direction that the camera is facing in</p>
+<h4 id="previewgetfacingheight">Preview#getFacingHeight()</h4>
+<p>Returns the height that the camera is facing in. Can be <code>down</code>, <code>middle</code> or <code>up</code>.</p>
+<h4 id="previewraycastmousecoords-x-y">Preview#raycastMouseCoords( x, y )</h4>
+<p>Transfer the screen space mouse coordinates <code>x</code> and <code>y</code> to 3D space of the orthographic camera.</p>
+<h4 id="previewoccupytransformer">Preview#occupyTransformer()</h4>
+<p>Occupy the transformer gizmo and adjust the size to the current camera angle.</p>
+<h4 id="previewscreenshot-options-callback">Preview#screenshot( options, callback )</h4>
+<p>Takes a screenshot of the preview.</p>
+<ul>
+<li><code>options: Object</code> <ul>
+<li><code>crop: Boolean</code> Automatically crop the screenshot to the minimal size</li>
+<li><code>width: Number</code> Screenshot width</li>
+<li><code>height: Number</code> Screenshot height</li>
+</ul>
+</li>
+<li><code>callback: Function</code> <ul>
+<li><code>image: String</code> Base64 encoded image</li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>
