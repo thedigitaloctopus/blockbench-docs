@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Menu - Blockbench</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Menu";
+    var mkdocs_page_input_path = "menu.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Blockbench</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../plugin/">Plugin</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blockbench/">Blockbench</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ui/">Interface</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../formats/">Formats</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../actions/">Actions</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Menu</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#menu">Menu</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#new-menu-content">new Menu( content )</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#barmenu">BarMenu</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#new-barmenu-id-content-condition">new BarMenu( id, content, condition )</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#menubar">MenuBar</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#menubarupdate">MenuBar.update()</a></li>
+        
+            <li><a class="toctree-l3" href="#menubaraddaction-action-path">MenuBar.addAction( action, path )</a></li>
+        
+            <li><a class="toctree-l3" href="#menubarremoveaction-path">MenuBar.removeAction( path )</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../undo/">Undo</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../modes/">Modes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../outliner/">Outliner</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../textures/">Textures</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preview/">Preview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../utility/">Utility</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../theme/">Theme</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Blockbench</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Menu</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="menu">Menu</h2>
+<p>A menu or context menu.</p>
+<h3 id="new-menu-content">new Menu( content )</h3>
+<ul>
+<li><code>content: Array</code> List of main level menu items. Can be Actions, objects functioning as <code>MenuItems</code>, or <code>'_'</code> functioning as a separator<ul>
+<li><code>MenuItem: Object</code><ul>
+<li><code>id: String</code> Identifier of the menu item, this is used to navigate nested menus.</li>
+<li><code>name: String</code> Menu Label. This can be a direct name or a translation string</li>
+<li><code>description: String</code> Item description, appearing when hovering over this menu item. This can be a direct name or a translation string</li>
+<li><code>icon: Icon String</code> Menu item icon</li>
+<li><code>color: CSS Color</code> color of the icon. Can be an axis letter for red/green/blue axis color.</li>
+<li><code>condition: Condition</code> Whether to show this item</li>
+<li><code>children: Array</code> Child menu items</li>
+<li><code>click: Function</code> Runs when you click the event. First argument is the context as specified in Menu.open(). Second argument is the click event.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="menuopen-position-context">Menu#open( position, context )</h4>
+<p>Opens the menu</p>
+<ul>
+<li><code>position: MouseEvent|HTML Element</code> Event or element defining the opening position of the menu</li>
+<li><code>context: Any</code> Opening context of the menu. This can be used in click events of menu items for object specific context menus.</li>
+</ul>
+<h4 id="menuhide">Menu#hide()</h4>
+<p>Hides the menu</p>
+<h4 id="menuaddaction-action-path">Menu#addAction( action, path )</h4>
+<p>Adds an action or menu item to the menu</p>
+<ul>
+<li><code>action: Action|Object</code> Action to add</li>
+<li><code>path: String</code> Path to where to add the action, separated by periods. The last part can be a number, indicating where in the list to add the action. The number can be negative for starting from the end. Example: <code>import.0</code> (Add the action to the start of the File &gt; Import submenu)</li>
+</ul>
+<h4 id="menuremoveaction-path">Menu#removeAction( path )</h4>
+<p>Removes an action from a menu.</p>
+<ul>
+<li><code>path: String</code> Path to the action, separated by periods.</li>
+</ul>
+<h2 id="barmenu">BarMenu</h2>
+<p>Menu for the main menu bar</p>
+<h3 id="new-barmenu-id-content-condition">new BarMenu( id, content, condition )</h3>
+<p>Creates a new menu inside the main menu bar</p>
+<ul>
+<li><code>id: String</code> Identifier for the menu</li>
+<li><code>content: Array</code> List of menu items. Works the same as in normal menus.</li>
+<li><code>condition: Condition</code> Whether to show the menu in the menu bar.</li>
+</ul>
+<h2 id="menubar">MenuBar</h2>
+<p>Global constant keeping track of the program's main menu bar.</p>
+<h4 id="menubarupdate">MenuBar.update()</h4>
+<p>Updates the state and conditions of the menu bar</p>
+<h4 id="menubaraddaction-action-path">MenuBar.addAction( action, path )</h4>
+<p>Adds an action or menu item to the menu</p>
+<ul>
+<li><code>action: Action|Object</code> Action to add</li>
+<li><code>path: String</code> Path to where to add the action, separated by periods. The last part can be a number, indicating where in the list to add the action. The number can be negative for starting from the end. Example: <code>import.0</code> (Add the action to the start of the File &gt; Import submenu)</li>
+</ul>
+<h4 id="menubarremoveaction-path">MenuBar.removeAction( path )</h4>
+<p>Removes an action from a menu.</p>
+<ul>
+<li><code>path: String</code> Path to the action, separated by periods.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../undo/" class="btn btn-neutral float-right" title="Undo">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../actions/" class="btn btn-neutral" title="Actions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../actions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../undo/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
