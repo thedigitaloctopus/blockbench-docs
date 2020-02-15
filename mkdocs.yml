@@ -7,6 +7,7 @@ nav:
   - Interface: ui.md
   - Formats: formats.md
   - Actions: actions.md
+  - Menu: menu.md
   - Undo: undo.md
   - Modes: modes.md
   - Outliner: outliner.md
