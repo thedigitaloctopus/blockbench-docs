@@ -207,9 +207,9 @@
 </ul>
 <h4 id="canvasmaterialstextureuuid">Canvas.materials[texture.uuid]</h4>
 <p>THREE.JS materials are saved in a separate location to increase performance. You can get the material using the texture's uuid.</p>
-<h4 id="texturegeterrormessage">texture.getErrorMessage()</h4>
+<h4 id="texturegeterrormessage">Texture#getErrorMessage()</h4>
 <p>Returns the translated error message of the texture.</p>
-<h4 id="textureextend-data-object">texture.extend( data: Object )</h4>
+<h4 id="textureextend-data-object">Texture#extend( data: Object )</h4>
 <p>Copy properties from <code>data</code> into the texture.</p>
 <h4 id="load-callback-function">load( callback: Function )</h4>
 <p>Loads the texture by updating its source.</p>
@@ -217,41 +217,41 @@
 <li><code>callback</code> function to call after the update is finished. The update is asynchronous.</li>
 </ul>
 <h2 id="loading-textures">Loading Textures</h2>
-<h4 id="texturefromjavalink-link-string-path_array-array">texture.fromJavaLink( link: String, path_array: Array )</h4>
+<h4 id="texturefromjavalink-link-string-path_array-array">Texture#fromJavaLink( link: String, path_array: Array )</h4>
 <p>Tries to load the texture from a java edition resource pack using the relative path provided in the model file and the absolute path of the model.</p>
-<h4 id="texturefromfile-file-string">texture.fromFile( file: String )</h4>
+<h4 id="texturefromfile-file-string">Texture#fromFile( file: String )</h4>
 <p>Loads the texture from a file object, as used in Blockbench.import.</p>
-<h4 id="texturefrompath-path-string">texture.fromPath( path: String )</h4>
+<h4 id="texturefrompath-path-string">Texture#fromPath( path: String )</h4>
 <p>Loads the texture from an absolute path.</p>
-<h4 id="texturefromdataurl-data_url-string">texture.fromDataURL( data_url: String )</h4>
+<h4 id="texturefromdataurl-data_url-string">Texture#fromDataURL( data_url: String )</h4>
 <p>Loads the texture from a data URL (base64 encoded image)</p>
-<h4 id="texturefromdefaultpack">texture.fromDefaultPack()</h4>
+<h4 id="texturefromdefaultpack">Texture#fromDefaultPack()</h4>
 <p>Attempts to load the texture from the default resource pack if defined in the Blockbench settings.</p>
-<h4 id="textureloadempty-error_id-number">texture.loadEmpty( error_id: Number )</h4>
+<h4 id="textureloadempty-error_id-number">Texture#loadEmpty( error_id: Number )</h4>
 <p>Loads the texture with an empty (error) texture and sets the error code to <code>error_id</code>.</p>
-<h4 id="textureadd-undo-boolean">texture.add( undo: Boolean )</h4>
+<h4 id="textureadd-undo-boolean">Texture#add( undo: Boolean )</h4>
 <p>Adds the texture to Blockbench and takes care of applying the texture to all cubes if required by the format.</p>
 <ul>
 <li><code>undo</code> Whether to create an undo point for adding the texture.</li>
 </ul>
-<h4 id="texturegeneratefolder-path-string">texture.generateFolder( path: String )</h4>
+<h4 id="texturegeneratefolder-path-string">Texture#generateFolder( path: String )</h4>
 <p>Generate the java edition texture folder from a given path.</p>
 <h2 id="updating-textures">Updating textures</h2>
-<h4 id="textureupdatesource-data_url-string">texture.updateSource( data_url: String )</h4>
+<h4 id="textureupdatesource-data_url-string">Texture#updateSource( data_url: String )</h4>
 <p>Updates the source of the texture. This is used if the texture gets edited. Also updates the material and UV Editor view of the texture</p>
-<h4 id="textureupdatematerial">texture.updateMaterial()</h4>
+<h4 id="textureupdatematerial">Texture#updateMaterial()</h4>
 <p>Only update the THREE.JS material of the texture.</p>
-<h4 id="texturereopen-force-boolean">texture.reopen( force: Boolean )</h4>
+<h4 id="texturereopen-force-boolean">Texture#reopen( force: Boolean )</h4>
 <p>Opens a file dialog to replace the texture source with another file.</p>
 <ul>
 <li><code>force</code> If true, Blockbench won't show a warning message if the texture has unsaved changes.</li>
 </ul>
-<h4 id="texturereloadtexture">texture.reloadTexture()</h4>
+<h4 id="texturereloadtexture">Texture#reloadTexture()</h4>
 <p>Reloads the texture to update changes to the file. This is usually not necessary as the texture updates automatically when there are any changes.</p>
 <h2 id="handling-textures">Handling textures</h2>
-<h4 id="textureselect-event-event">texture.select( event: Event )</h4>
+<h4 id="textureselect-event-event">Texture#select( event: Event )</h4>
 <p>Select this texture.</p>
-<h4 id="textureremove-no_update-boolean">texture.remove( no_update: Boolean )</h4>
+<h4 id="textureremove-no_update-boolean">Texture#remove( no_update: Boolean )</h4>
 <p>Removes the texture.</p>
 <ul>
 <li><code>no_update</code> If true, don't update the interface and don't create an undo point </li>
@@ -265,25 +265,25 @@
 <ul>
 <li><code>all</code> When true, apply the texture to all faces</li>
 </ul>
-<h4 id="texturejavatexturelink">texture.javaTextureLink()</h4>
+<h4 id="texturejavatexturelink">Texture#javaTextureLink()</h4>
 <p>Returns the link of the texture as used in java edition block/item models.</p>
 <h2 id="texture-menu">Texture Menu</h2>
-<h4 id="textureopenfolder">texture.openFolder()</h4>
+<h4 id="textureopenfolder">Texture#openFolder()</h4>
 <p>Show the source file of the texture in a new Explorer/Finder window.</p>
-<h4 id="textureopeneditor">texture.openEditor()</h4>
+<h4 id="textureopeneditor">Texture#openEditor()</h4>
 <p>Open the texture in the preferred image editor as specified in the settings.</p>
-<h4 id="textureshowcontextmenu-event">texture.showContextMenu( event )</h4>
+<h4 id="textureshowcontextmenu-event">Texture#showContextMenu( event )</h4>
 <p>Show the context menu of the texture using the position of the event.</p>
-<h4 id="textureopenmenu">texture.openMenu()</h4>
+<h4 id="textureopenmenu">Texture#openMenu()</h4>
 <p>Opens the texture menu dialog.</p>
 <h2 id="editing-textures">Editing Textures</h2>
-<h4 id="textureedit-callback-function-options-object">texture.edit( callback: Function, options: Object )</h4>
+<h4 id="textureedit-callback-function-options-object">Texture#edit( callback: Function, options: Object )</h4>
 <p>Edits the texture using the callback function.
 * <code>callback</code> Function to edit the texture. If omitted, the texture will be converted to an editable texture but won't be edited.</p>
-<h4 id="texturesave-as-boolean">texture.save( as: Boolean )</h4>
+<h4 id="texturesave-as-boolean">Texture#save( as: Boolean )</h4>
 <p>Saves changes to the texture.
 * <code>as</code> If true, a file dialog will be opened even if the location of the file is known.</p>
-<h4 id="texturegetbase64">texture.getBase64()</h4>
+<h4 id="texturegetbase64">Texture#getBase64()</h4>
 <p>Returns the base64 string of the texture.</p>
 <h2 id="textureanimator">TextureAnimator</h2>
 <p>Tool to control animated textures.</p>

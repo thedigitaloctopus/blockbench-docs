@@ -191,11 +191,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="formatselect">Format.select()</h3>
+<h3 id="formatselect">Format#select()</h3>
 <p>Selects the format</p>
-<h3 id="formatnew">Format.new()</h3>
+<h3 id="formatnew">Format#new()</h3>
 <p>Creates a new project using this format.</p>
-<h3 id="formatconvertto">Format.convertTo()</h3>
+<h3 id="formatconvertto">Format#convertTo()</h3>
 <p>Convert the model to this format</p>
 <h2 id="codec">Codec</h2>
 <p>Codecs are used to define specific file formats. Codecs can have an importer and an exporter as well as a few other functions that can be overwritten to achieve custom import and export behavior.</p>
@@ -217,6 +217,11 @@
 <li><code>afterSave(path)</code> Overwrite the default afterSave function</li>
 </ul>
 </li>
+</ul>
+<h4 id="codecload-model-file">Codec#load( model, file )</h4>
+<p>Loads a model with using the codec</p>
+<ul>
+<li><code>model: Object/String</code> Input model. If JSON, this is a parsed object, otherwise this is a string</li>
 </ul>
               
             </div>
