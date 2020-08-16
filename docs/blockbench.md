@@ -120,23 +120,29 @@ Removes an event listener using the `event_id` and `callback`. Should be used in
 | user_leaves_session	| 
 | process_chat_message	| 
 | update_settings		| 
+| update_project_settings	|
 | save_project	| 
 | load_project	| 
 | new_project	| 
+| reset_project	|  
 | close_project	| 
 | add_cube		| 
 | add_group		| 
 | update_selection	| 
+| update_keyframe_selection	| 
 | select_all		| 
-| added_to_selection	| 
+| added_to_selection| 
 | invert_selection	| 
 | canvas_select		| 
+| canvas_click		| 
 | change_texture_path	| 
 | add_texture		| 
 | finish_edit		| 
 | finished_edit		| 
 | undo				| 
 | redo				| 
+| select_mode		| 
+| unselect_mode		| 
 
 
 ## Drag and Drop Files

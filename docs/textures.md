@@ -33,10 +33,10 @@ Creates a new texture
 #### Canvas.materials[texture.uuid]
 THREE.JS materials are saved in a separate location to increase performance. You can get the material using the texture's uuid.
 
-#### texture.getErrorMessage()
+#### Texture#getErrorMessage()
 Returns the translated error message of the texture.
 
-#### texture.extend( data: Object )
+#### Texture#extend( data: Object )
 Copy properties from `data` into the texture.
 
 #### load( callback: Function )
@@ -46,55 +46,55 @@ Loads the texture by updating its source.
 
 ## Loading Textures
 
-#### texture.fromJavaLink( link: String, path_array: Array )
+#### Texture#fromJavaLink( link: String, path_array: Array )
 Tries to load the texture from a java edition resource pack using the relative path provided in the model file and the absolute path of the model.
 
-#### texture.fromFile( file: String )
+#### Texture#fromFile( file: String )
 Loads the texture from a file object, as used in Blockbench.import.
 
-#### texture.fromPath( path: String )
+#### Texture#fromPath( path: String )
 Loads the texture from an absolute path.
 
-#### texture.fromDataURL( data_url: String )
+#### Texture#fromDataURL( data_url: String )
 Loads the texture from a data URL (base64 encoded image)
 
-#### texture.fromDefaultPack()
+#### Texture#fromDefaultPack()
 Attempts to load the texture from the default resource pack if defined in the Blockbench settings.
 
-#### texture.loadEmpty( error_id: Number )
+#### Texture#loadEmpty( error_id: Number )
 Loads the texture with an empty (error) texture and sets the error code to `error_id`.
 
-#### texture.add( undo: Boolean )
+#### Texture#add( undo: Boolean )
 Adds the texture to Blockbench and takes care of applying the texture to all cubes if required by the format.
 
 * `undo` Whether to create an undo point for adding the texture.
 
-#### texture.generateFolder( path: String )
+#### Texture#generateFolder( path: String )
 Generate the java edition texture folder from a given path.
 
 ## Updating textures
 
-#### texture.updateSource( data_url: String )
+#### Texture#updateSource( data_url: String )
 Updates the source of the texture. This is used if the texture gets edited. Also updates the material and UV Editor view of the texture
 
-#### texture.updateMaterial()
+#### Texture#updateMaterial()
 Only update the THREE.JS material of the texture.
 
-#### texture.reopen( force: Boolean )
+#### Texture#reopen( force: Boolean )
 Opens a file dialog to replace the texture source with another file.
 
 * `force` If true, Blockbench won't show a warning message if the texture has unsaved changes.
 
-#### texture.reloadTexture()
+#### Texture#reloadTexture()
 Reloads the texture to update changes to the file. This is usually not necessary as the texture updates automatically when there are any changes.
 
 ## Handling textures
 
-#### texture.select( event: Event )
+#### Texture#select( event: Event )
 Select this texture.
 
 
-#### texture.remove( no_update: Boolean )
+#### Texture#remove( no_update: Boolean )
 Removes the texture.
 
 * `no_update` If true, don't update the interface and don't create an undo point 
@@ -110,34 +110,34 @@ Applies the texture to all selected cubes. Creates an undo point.
 
 * `all` When true, apply the texture to all faces
 
-#### texture.javaTextureLink()
+#### Texture#javaTextureLink()
 Returns the link of the texture as used in java edition block/item models.
 
 ## Texture Menu
 
-#### texture.openFolder()
+#### Texture#openFolder()
 Show the source file of the texture in a new Explorer/Finder window.
 
-#### texture.openEditor()
+#### Texture#openEditor()
 Open the texture in the preferred image editor as specified in the settings.
 
-#### texture.showContextMenu( event )
+#### Texture#showContextMenu( event )
 Show the context menu of the texture using the position of the event.
 
-#### texture.openMenu()
+#### Texture#openMenu()
 Opens the texture menu dialog.
 
 ## Editing Textures
 
-#### texture.edit( callback: Function, options: Object )
+#### Texture#edit( callback: Function, options: Object )
 Edits the texture using the callback function.
 * `callback` Function to edit the texture. If omitted, the texture will be converted to an editable texture but won't be edited.
 
-#### texture.save( as: Boolean )
+#### Texture#save( as: Boolean )
 Saves changes to the texture.
 * `as` If true, a file dialog will be opened even if the location of the file is known.
 
-#### texture.getBase64()
+#### Texture#getBase64()
 Returns the base64 string of the texture.
 
 

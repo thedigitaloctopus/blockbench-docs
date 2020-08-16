@@ -26,15 +26,15 @@ A model format can describe how a specific type of model can be made: Which feat
 	* `onActivation` Function to run on activation of the format
 	* `onDeactivation` Function to run on deactivation of the format
 
-### Format.select()
+### Format#select()
 
 Selects the format
 
-### Format.new()
+### Format#new()
 
 Creates a new project using this format.
 
-### Format.convertTo()
+### Format#convertTo()
 
 Convert the model to this format
 
@@ -59,4 +59,8 @@ Codecs are used to define specific file formats. Codecs can have an importer and
 	* `afterDownload` Called after a model has successfully been downloaded. Displays the success message
 	* `afterSave(path)` Overwrite the default afterSave function
 
+#### Codec#load( model, file )
 
+Loads a model with using the codec
+
+* `model: Object/String` Input model. If JSON, this is a parsed object, otherwise this is a string
