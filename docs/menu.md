@@ -1,5 +1,6 @@
+# Menus
 
-## Menu
+## Menu Class
 
 A menu or context menu.
 
@@ -40,7 +41,7 @@ Removes an action from a menu.
 
 * `path: String` Path to the action, separated by periods.
 
-## BarMenu
+## BarMenu Class
 
 Menu for the main menu bar
 
@@ -67,7 +68,7 @@ Updates the state and conditions of the menu bar
 Adds an action or menu item to the menu
 
 * `action: Action|Object` Action to add
-* `path: String` Path to where to add the action, separated by periods. The last part can be a number, indicating where in the list to add the action. The number can be negative for starting from the end. Example: `import.0` (Add the action to the start of the File > Import submenu)
+* `path: String` Path to where to add the action, separated by periods. The last part can be a number, indicating where in the list to add the action. The number can be negative for starting from the end. Example: `file.import.0` (Add the action to the start of the File > Import submenu)
 
 #### MenuBar.removeAction( path )
 
