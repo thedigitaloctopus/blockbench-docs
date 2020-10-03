@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Formats - Blockbench</title>
+  <title>Properties - Blockbench</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Formats";
-    var mkdocs_page_input_path = "formats.md";
+    var mkdocs_page_name = "Properties";
+    var mkdocs_page_input_path = "property.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -68,23 +68,9 @@
     <a class="" href="../ui/">Interface</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Formats</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#formats">Formats</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#modelformat">ModelFormat</a></li>
-        
-            <li><a class="toctree-l3" href="#codec">Codec</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../formats/">Formats</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -97,9 +83,21 @@
     <a class="" href="../menu/">Menu</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../property/">Properties</a>
+    <a class="current" href="./">Properties</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#property">Property</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#new-property-target-type-name-options">new Property( target, type, name, options )</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -159,7 +157,7 @@
     
       
     
-    <li>Formats</li>
+    <li>Properties</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -169,65 +167,71 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="formats">Formats</h1>
-<h2 id="modelformat">ModelFormat</h2>
-<p>A model format can describe how a specific type of model can be made: Which features are available, which modes can be accessed and to which file formats can the model be exported.</p>
-<h3 id="new-modelformat-data">new ModelFormat( data )</h3>
+                <h1 id="property">Property</h1>
+<p>Properties are used to dynamically assign properties to existing classes that are undo-relevant.
+The advantages of using properties include:</p>
 <ul>
-<li><code>data</code> Object<ul>
-<li><code>id</code> Format ID</li>
-<li><code>name</code> Format name</li>
-<li><code>description</code> Format description</li>
-<li><code>show_on_start_screen</code> Whether to list the format as an option on the start screen</li>
-<li><code>box_uv</code> Whether to enable box UV in the format</li>
-<li><code>optional_box_uv</code> Allows the user to enable or disable box UV within the format</li>
-<li><code>single_texture</code> Only allow one single texture at a time</li>
-<li><code>bone_rig</code> Whether to use groups as a bone rig</li>
-<li><code>rotate_cubes</code> Allow the user to rotate cubes</li>
-<li><code>integer_size</code> Limit cube sizes to full integers</li>
-<li><code>locators</code> Enable Locators</li>
-<li><code>canvas_limit</code> Enable the 3x3x3 model size limmit</li>
-<li><code>rotation_limit</code> Enable the rotation limit to 22.5 degrees and one axis</li>
-<li><code>display_mode</code> Enable the display mode</li>
-<li><code>animation_mode</code> Enable animations</li>
-<li><code>codec</code> Which <a href="#codec">Codec</a> to use as the default codec for the format</li>
-<li><code>onActivation</code> Function to run on activation of the format</li>
-<li><code>onDeactivation</code> Function to run on deactivation of the format</li>
+<li>Value of property is properly handled by the Undo system</li>
+<li>Property is stored in and loaded from .bbmodel files.</li>
+<li>Property is copied when copy-pasting or duplicating an object</li>
+</ul>
+<p>Properties are supported on the following classes:</p>
+<ul>
+<li>ModelProject</li>
+<li>Group</li>
+<li>Cube</li>
+<li>Locator</li>
+<li>Face</li>
+<li>Texture</li>
+<li>Animation</li>
+<li>Keyframe</li>
+<li>KeyframeDataPoint</li>
+</ul>
+<h3 id="new-property-target-type-name-options">new Property( target, type, name, options )</h3>
+<p>Creates a new property on the target class</p>
+<ul>
+<li><code>target: Class</code> Target class</li>
+<li><code>type: String</code> Data type: Can be one of<ul>
+<li><code>string</code> String</li>
+<li><code>molang</code> Molang value, supports both strings and numbers. Also creates an accessor property on the class (<code>&lt;name&gt;_string</code>) that returns the value as a string</li>
+<li><code>number</code> Number</li>
+<li><code>boolean</code> Boolean</li>
+<li><code>array</code> Array</li>
+<li><code>vector</code> 3 dimensional vector</li>
+<li><code>vector2</code> 2 dimensional vector</li>
+</ul>
+</li>
+<li><code>name: String</code> Name/Key of the property</li>
+<li><code>options: Object</code> Optional additional settings<ul>
+<li><code>default: Any</code> Default property value</li>
+<li><code>merge: Function</code> Custom merge function</li>
+<li><code>reset: Function</code> Custom reset function</li>
+<li><code>merge_validation: Function</code> Validates values before merging</li>
+<li><code>condition: ConditionResolvable</code> Condition for when to use this property</li>
+<li><code>exposed: Boolean</code>: Whether the property is exposed to the user. This currently applies to project settings (Project dialog) and keyframe data point properties (keyframe panel).</li>
+<li><code>options: Object</code> Turns the string input into a select input with the provided options. Currently only works for project settings.</li>
 </ul>
 </li>
 </ul>
-<h3 id="formatselect">Format#select()</h3>
-<p>Selects the format</p>
-<h3 id="formatnew">Format#new()</h3>
-<p>Creates a new project using this format.</p>
-<h3 id="formatconvertto">Format#convertTo()</h3>
-<p>Convert the model to this format</p>
-<h2 id="codec">Codec</h2>
-<p>Codecs are used to define specific file formats. Codecs can have an importer and an exporter as well as a few other functions that can be overwritten to achieve custom import and export behavior.</p>
-<h3 id="new-codecid-data">new Codec(id, data)</h3>
-<ul>
-<li><code>id</code> ID of the Codec</li>
-<li><code>data</code> Object<ul>
-<li><code>name</code> Name of the Codec</li>
-<li><code>extension</code> Default extension for the codec</li>
-<li><code>remember</code> Boolean. Whether to remember the model in the recent files list and as the opened model file.</li>
-<li><code>export_action</code> Default action used to export for this format.</li>
-<li><code>compile()</code> Should return the compiled model</li>
-<li><code>parse( model, path )</code> Parse and add the provided model to Blockbench</li>
-<li><code>export()</code> Overwrite the default export function</li>
-<li><code>load( model, file, add )</code> Overwrite the default load function</li>
-<li><code>fileName()</code> Returns the suggested file name for exported files</li>
-<li><code>filePath</code> Returns the suggested start path for the export dialog</li>
-<li><code>afterDownload</code> Called after a model has successfully been downloaded. Displays the success message</li>
-<li><code>afterSave(path)</code> Overwrite the default afterSave function</li>
-</ul>
-</li>
-</ul>
-<h4 id="codecload-model-file">Codec#load( model, file )</h4>
-<p>Loads a model with using the codec</p>
-<ul>
-<li><code>model: Object/String</code> Input model. If JSON, this is a parsed object, otherwise this is a string</li>
-</ul>
+<h4 id="example">Example</h4>
+<pre><code class="javascript">// Creates a simple property named 'rotation' on faces
+new Property(Face, 'number', 'rotation');
+
+// Creates a property named 'cullface' on faces that is validated against a list of possible values
+let valid_cullfaces = ['north', 'south', 'east', 'west', 'up', 'down', ''];
+new Property(Face, 'string', 'cullface', {
+    merge_validation: val =&gt; valid_cullfaces.includes(val)
+});
+</code></pre>
+
+<h4 id="propertydelete">Property#delete()</h4>
+<p>Deletes the property</p>
+<h4 id="propertymerge-instance-data">Property#merge( instance, data )</h4>
+<p>Merges the property value from <code>data</code> into the property on the <code>instance</code> of the target class.</p>
+<h4 id="propertycopy-instance-target">Property#copy( instance, target )</h4>
+<p>Deletes the property</p>
+<h4 id="propertyreset-instances">Property#reset( instances )</h4>
+<p>Resets the property to the default value on the given <code>instance</code></p>
               
             </div>
           </div>
@@ -235,10 +239,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../actions/" class="btn btn-neutral float-right" title="Actions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../undo/" class="btn btn-neutral float-right" title="Undo">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ui/" class="btn btn-neutral" title="Interface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../menu/" class="btn btn-neutral" title="Menu"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -264,10 +268,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ui/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../menu/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../actions/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../undo/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
