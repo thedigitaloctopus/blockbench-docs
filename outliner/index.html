@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Outliner - Blockbench</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,7 +25,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> Blockbench</a>
         <div role="search">
@@ -45,105 +47,204 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Getting Started</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../plugin/">Plugin</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../blockbench/">Blockbench</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ui/">Interface</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../formats/">Formats</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../actions/">Actions</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../menu/">Menu</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../property/">Properties</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../undo/">Undo</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../modes/">Modes</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Outliner</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#outliner">Outliner</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../plugin/">Plugin</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blockbench/">Blockbench</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ui/">Interface</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../formats/">Formats</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../actions/">Actions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../menu/">Menu</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../property/">Properties</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../undo/">Undo</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../modes/">Modes</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Outliner</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#outliner-management">Outliner management</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#outliner-management">Outliner management</a></li>
-        
-            <li><a class="toctree-l3" href="#group">Group</a></li>
-        
-            <li><a class="toctree-l3" href="#cube">Cube</a></li>
-        
-            <li><a class="toctree-l3" href="#locator">Locator</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#outlinerelement">OutlinerElement()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementinit">OutlinerElement#init()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementaddto-destination">OutlinerElement#addTo( destination )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementsortinbefore-destination-index_mod">OutlinerElement#sortInBefore( destination, index_mod )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementgetparentarray">OutlinerElement#getParentArray()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementshowinoutliner">OutlinerElement#showInOutliner()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementupdateelement">OutlinerElement#updateElement()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementremove">OutlinerElement#remove()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementrename">OutlinerElement#rename()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementsavename">OutlinerElement#saveName()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementcreateuniquename">OutlinerElement#createUniqueName()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementischildof-group-max_levels">OutlinerElement#isChildOf( group, max_levels )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outlinerelementshowcontextmenu-event">OutlinerElement#showContextMenu( event )</a>
+    </li>
         </ul>
-    
-
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#group">Group</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#new-group-data">new Group( data )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#groupselected">Group.selected</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#groupextend-data">Group#extend( data )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupselectchildren-event">Group#selectChildren( event )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupselectlow-highlight">Group#selectLow( highlight )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupunselect">Group#unselect()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupmatchesselection">Group#matchesSelection()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupopenup">Group#openUp()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupremove-undo">Group#remove( undo )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupresolve">Group#resolve()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#grouptransferorigin-origin">Group#transferOrigin( origin )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupsortcontent">Group#sortContent()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupduplicate">Group#duplicate()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupgetsavecopy">Group#getSaveCopy()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupgetchildlesscopy">Group#getChildlessCopy()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupcompile-undo">Group#compile( undo )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#groupforeachchild-callback-type-for_self">Group#forEachChild( callback, type, for_self )</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cube">Cube</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#new-cube-data-init">new Cube( data ).init()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cubeextend-data-object">Cube#extend( data: Object )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubesize-axis-number-floored-boolean">Cube#size( axis: Number, floored: Boolean )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cuberotationaxis">Cube#rotationAxis()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubegetmesh">Cube#getMesh()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cuberemove">Cube#remove()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubegetundocopy-aspects">Cube#getUndoCopy( aspects )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubegetundocopy-aspects_1">Cube#getUndoCopy( aspects )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cuberoll-axis-steps-origin">Cube#roll( axis, steps, origin)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubeflip-axis-center-skipuv">Cube#flip( axis, center, skipUV )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubetransferorigin-origin">Cube#transferOrigin( origin )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubegetworldcenter">Cube#getWorldCenter()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubesetcolor-index">Cube#setColor( index )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubeapplytexture-texture-faces">Cube#applyTexture( texture, faces )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubemapautouv">Cube#mapAutoUV()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubemove-value-axis-move_origin">Cube#move( value, axis, move_origin )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cubemovevector-value-axis">Cube#moveVector( value, axis )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cuberesize-value-axis-negative-allow_negative">Cube#resize( value, axis, negative, allow_negative )</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#locator">Locator</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#new-cube-data-init_1">new Cube( data ).init()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cubeextend-data-object_1">Cube#extend( data: Object )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#locatorgetundocopy-aspects">Locator#getUndoCopy( aspects )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#locatorgetundocopy-aspects_1">Locator#getUndoCopy( aspects )</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#locatorflip-axis-center">Locator#flip( axis, center)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#locatorgetworldcenter">Locator.getWorldCenter()</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#locatormove-value-axis">Locator.move( value, axis )</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../textures/">Textures</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../preview/">Preview</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../utility/">Utility</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../theme/">Theme</a>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../textures/">Textures</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../preview/">Preview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../utility/">Utility</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../theme/">Theme</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -168,6 +269,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -431,7 +533,7 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -441,7 +543,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -455,6 +557,11 @@
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

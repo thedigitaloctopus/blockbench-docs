@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Undo - Blockbench</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,7 +25,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> Blockbench</a>
         <div role="search">
@@ -45,103 +47,82 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Getting Started</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../plugin/">Plugin</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../blockbench/">Blockbench</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ui/">Interface</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../formats/">Formats</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../actions/">Actions</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../menu/">Menu</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../property/">Properties</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Undo</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#undo">Undo</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../plugin/">Plugin</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blockbench/">Blockbench</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ui/">Interface</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../formats/">Formats</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../actions/">Actions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../menu/">Menu</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../property/">Properties</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Undo</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-an-undo-point">Creating an undo point</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#creating-an-undo-point">Creating an undo point</a></li>
-        
-            <li><a class="toctree-l3" href="#aspects">Aspects</a></li>
-        
-            <li><a class="toctree-l3" href="#example">Example</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#undoinitedit-aspects">Undo.initEdit( aspects )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#undofinishedit-edit_name-aspects">Undo.finishEdit( edit_name[, aspects] )</a>
+    </li>
         </ul>
-    
-
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aspects">Aspects</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example">Example</a>
+    </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../modes/">Modes</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../outliner/">Outliner</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../textures/">Textures</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../preview/">Preview</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../utility/">Utility</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../theme/">Theme</a>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../modes/">Modes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../outliner/">Outliner</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../textures/">Textures</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../preview/">Preview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../utility/">Utility</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../theme/">Theme</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -166,6 +147,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -283,7 +265,7 @@ Undo.finishEdit('add new cubes', {elements: [new_cube, other_cube]});
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -293,7 +275,7 @@ Undo.finishEdit('add new cubes', {elements: [new_cube, other_cube]});
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -307,6 +289,11 @@ Undo.finishEdit('add new cubes', {elements: [new_cube, other_cube]});
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

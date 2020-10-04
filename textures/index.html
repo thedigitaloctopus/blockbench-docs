@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Textures - Blockbench</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,7 +25,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> Blockbench</a>
         <div role="search">
@@ -45,111 +47,168 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Getting Started</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../plugin/">Plugin</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../blockbench/">Blockbench</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ui/">Interface</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../formats/">Formats</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../actions/">Actions</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../menu/">Menu</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../property/">Properties</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../undo/">Undo</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../modes/">Modes</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../outliner/">Outliner</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Textures</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#textures">Textures</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../plugin/">Plugin</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blockbench/">Blockbench</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ui/">Interface</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../formats/">Formats</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../actions/">Actions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../menu/">Menu</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../property/">Properties</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../undo/">Undo</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../modes/">Modes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../outliner/">Outliner</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Textures</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#new-texture-data-uuid">new Texture( data, uuid )</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#new-texture-data-uuid">new Texture( data, uuid )</a></li>
-        
-            <li><a class="toctree-l3" href="#loading-textures">Loading Textures</a></li>
-        
-            <li><a class="toctree-l3" href="#updating-textures">Updating textures</a></li>
-        
-            <li><a class="toctree-l3" href="#handling-textures">Handling textures</a></li>
-        
-            <li><a class="toctree-l3" href="#texture-menu">Texture Menu</a></li>
-        
-            <li><a class="toctree-l3" href="#editing-textures">Editing Textures</a></li>
-        
-            <li><a class="toctree-l3" href="#textureanimator">TextureAnimator</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#canvasmaterialstextureuuid">Canvas.materials[texture.uuid]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturegeterrormessage">Texture#getErrorMessage()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureextend-data-object">Texture#extend( data: Object )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#load-callback-function">load( callback: Function )</a>
+    </li>
         </ul>
-    
-
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loading-textures">Loading Textures</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#texturefromjavalink-link-string-path_array-array">Texture#fromJavaLink( link: String, path_array: Array )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturefromfile-file-string">Texture#fromFile( file: String )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturefrompath-path-string">Texture#fromPath( path: String )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturefromdataurl-data_url-string">Texture#fromDataURL( data_url: String )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturefromdefaultpack">Texture#fromDefaultPack()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureloadempty-error_id-number">Texture#loadEmpty( error_id: Number )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureadd-undo-boolean">Texture#add( undo: Boolean )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturegeneratefolder-path-string">Texture#generateFolder( path: String )</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updating-textures">Updating textures</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#textureupdatesource-data_url-string">Texture#updateSource( data_url: String )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureupdatematerial">Texture#updateMaterial()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturereopen-force-boolean">Texture#reopen( force: Boolean )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturereloadtexture">Texture#reloadTexture()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#handling-textures">Handling textures</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#textureselect-event-event">Texture#select( event: Event )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureremove-no_update-boolean">Texture#remove( no_update: Boolean )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enableparticle">enableParticle()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fillparticle">fillParticle()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#apply-all-boolean">apply( all: Boolean )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturejavatexturelink">Texture#javaTextureLink()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#texture-menu">Texture Menu</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#textureopenfolder">Texture#openFolder()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureopeneditor">Texture#openEditor()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureshowcontextmenu-event">Texture#showContextMenu( event )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureopenmenu">Texture#openMenu()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#editing-textures">Editing Textures</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#textureedit-callback-function-options-object">Texture#edit( callback: Function, options: Object )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturesave-as-boolean">Texture#save( as: Boolean )</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texturegetbase64">Texture#getBase64()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#textureanimator">TextureAnimator</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#textureanimatorstart">TextureAnimator.start()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureanimatorstop">TextureAnimator.stop()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureanimatortoggle">TextureAnimator.toggle()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureanimatorupdatespeed">TextureAnimator.updateSpeed()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureanimatorreset">TextureAnimator.reset()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#textureanimatorupdatebutton">TextureAnimator.updateButton()</a>
+    </li>
+        </ul>
+    </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../preview/">Preview</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../utility/">Utility</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../theme/">Theme</a>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../preview/">Preview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../utility/">Utility</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../theme/">Theme</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -174,6 +233,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -323,7 +383,7 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -333,7 +393,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -347,6 +407,11 @@
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
